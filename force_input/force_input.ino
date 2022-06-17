@@ -1,3 +1,4 @@
+  
 /*
 measuring the force applied to the load cell
 
@@ -5,9 +6,6 @@ accuracy : +- 10^-2 N
 
 potential causes : 
 - unstable HX711 alimentation tension : it's more accurate with an external alimentation
-
-
-
 */
 
 
@@ -41,6 +39,7 @@ void setup() {
   
 }
 
+
 void loop() {
 
   if (scale.is_ready()) {
@@ -50,14 +49,14 @@ void loop() {
     //Serial.print(reading);
     
     double force = map(reading, value_low, value_high, force_low, force_high); 
-    Serial.print(" | Result in N: ");
-    Serial.println(force,2);
+    //Serial.print(" | Result in N: ");
+    //Serial.println(force,2);
 
-    /*
+    
     double mass = map(reading, value_low, value_high, force_low, force_high/g); 
     Serial.print(" | Result in kg: ");
     Serial.println(mass,4);
-    */
+    
     
     scale.wait_ready(0); // wait until the HX711 is ready to read another value
   } 

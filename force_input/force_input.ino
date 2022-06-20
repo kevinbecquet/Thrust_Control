@@ -49,8 +49,8 @@ void loop() {
     //Serial.print(reading);
     
     double force = map(reading, value_low, value_high, force_low, force_high); 
-    //Serial.print(" | Result in N: ");
-    //Serial.println(force,2);
+    Serial.print(" | Result in N: ");
+    Serial.println(force,2);
 
     
     double mass = map(reading, value_low, value_high, force_low, force_high/g); 

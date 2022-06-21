@@ -20,10 +20,16 @@ double force_high = 2*g; // Force developped by 2 kg (F = m*g)
 // Calibrating data output
 int  motorPin = 12;
 
-double freq = 10100;// PWM frequency in Hz
+double freq = 4000;// PWM frequency in Hz
 
-double dc = 127; // initial duty cycle : 50 %
+double dc = 0; // initial duty cycle : 50 %
 
+//control
+double y,yc;
+double Te = 1/freq;
+
+double Kp = 1.1, Ki = 0, Kd=0;
+double ui = 0,ud = 0,err = 0, err_p = 0;
 
 
 // linear mapping
@@ -46,20 +52,36 @@ double getForce(){
 }
 
 
-// returns the pwm output rate to send to the ESC
-double setCommand(double val){
+double getForceCommand(){
+
+  Serial.println("Serial acquisition...");
+  String reading = Serial.readString();
+  double fc  = reading.toFloat();
   
-  if(val < 0 || val > 255){
-    Serial.println("Not valid : Enter PWM signal value -1 to 1, 0 to stop");
-    return dc;
+  if(fc<0 || fc>19.62){
+    Serial.println("Invalid force input : enter value between 0 and 19.42");
+    return 0;
   }
-  else{
-    //double dc = map(val,-1.0,1.0,0,255);
-    double dc = val;
-    Serial.print("Command: ");
-    Serial.println(val);
-    return dc;
-  }
+  else return fc;
+}
+
+// returns the pwm output rate to send to the ESC
+double setCommand(double yc, double y){
+ 
+  
+  err = yc-y; 
+
+  
+  ui+= Ki*Te*err;
+  ud = Kd/Te*(err-err_p);
+  
+  double u = Kp*(err+ui+ud);
+  
+  err_p = err;
+
+ 
+
+  return u;
 }
 
 
@@ -74,20 +96,31 @@ void setup() {
 }
 
 void loop() {
-  
-  if (loadcell.is_ready()){ 
-    
-    getForce();
-  }
+  Serial.println("__");
   
   if(Serial.available()){
     
-    Serial.println("Serial acquisition...");
-    String reading = Serial.readString();
-    dc = setCommand(reading.toFloat());
+   yc = getForceCommand();
+  }
+
+  if (loadcell.is_ready()){ 
+    
+    y = getForce();
   }
   
-  analogWrite(motorPin,dc);
   
+  dc = setCommand(yc,dc); //replace dc by y when the load cell is calibrated
+  
+  Serial.print("dc: ");
+  Serial.print(dc);
+
+  Serial.print(" | yc: ");
+  Serial.println(yc);
+
+  
+  
+  analogWrite(motorPin,dc);
+  delay(Te*1000);
+
   
 }

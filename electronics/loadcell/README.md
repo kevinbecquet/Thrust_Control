@@ -8,7 +8,7 @@ The load cell used here is composed by a Wheatstone full bridge installed on an 
 
 ## Wheatstone bridge
 
-![alt text](images/Wheatstone_full_bridge.jpg)
+![alt text](images/wheatstone_full_bridge.jpg)
 
 This system is initially composed by 4 resistive elements. When the load cell isn't loaded, these elements have the same ohmic value :  
 R<sub>1</sub> = R<sub>2</sub> = R<sub>3</sub> = R<sub>4</sub> = R<sub>G</sub>
@@ -24,4 +24,4 @@ This let us a linear tranfosmartion from the thrust force provided by the motor 
 
 The load cell needs to be excited by a voltage of 5V provided by our MCU.
 
-
+![alt text](images/wheatstone_wiring.jpg)

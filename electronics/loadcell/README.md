@@ -9,7 +9,7 @@ aluminium plate.
 
 ## Wheatstone bridge
 
-![alt text]("images/Wheatstone_full_bridge.jpg")
+![alt text](images/Wheatstone_full_bridge.jpg)
 
 This system is initially composed by 4 resistive elements.  
 When the load cell isn't loaded, these elements have the same ohmic value  
@@ -20,6 +20,6 @@ which will make 2 resistors decrease and the other 2 increase.
 
 We can determine a linear relation between the input voltage and the V_0 as the following :
 
-![alt text]("images/V_0_V_in_relation.jpg")
+![alt text](images/V_0_V_in_relation.jpg)
 
 

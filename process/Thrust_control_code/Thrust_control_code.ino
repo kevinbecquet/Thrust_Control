@@ -1,15 +1,4 @@
-/**
-* Usage, according to documentation(https://www.firediy.fr/files/drone/HW-01-V4.pdf) : 
-*     1. Plug your Arduino to your computer with USB cable, open terminal, then type 1 to send max throttle to every ESC to enter programming mode
-*     2. Power up your ESCs. You must hear "beep1 beep2 beep3" tones meaning the power supply is OK
-*     3. After 2sec, "beep beep" tone emits, meaning the throttle highest point has been correctly confirmed
-*     4. Type 0 to send min throttle
-*     5. Several "beep" tones emits, which means the quantity of the lithium battery cells (3 beeps for a 3 cells LiPo)
-*     6. A long beep tone emits meaning the throttle lowest point has been correctly confirmed
-*     7. Type 2 to launch test function. This will send min to max throttle to ESCs to test them
-*
-* @author lobodol <grobodol@gmail.com>
-*/
+
 
 #include <Servo.h>
 // ---------------------------------------------------------------------------
@@ -22,7 +11,7 @@ char data;
 // ---------------------------------------------------------------------------
 
 
-// Calibrating the load cell
+// Load Cell calibration
 // ---------------------------------------------------------------------------
 int sensorPin = 8;
 
@@ -31,10 +20,21 @@ double g = 9.81; // acceleration of Earth's gravity
 double value_low = 0; //output value of the sensor when the motor is unloaded
 double force_low =0;// -0.5 * g; // Force developped by -0.5kg -> -5 N
 
-double value_high = 1023; //output value of the sensor when the motor is loaded by 2 kg
+double value_high = 1023; //output value of the sensor when the motor is loaded by 2.5 kg
 double force_high = 255;//2.5 * g; // Force developped by 2 kg (F = m*g) -> 24.5 N
 
-//---------------------------------------------------------------------------
+//----------------------------------------------------------------------------
+
+//control
+//----------------------------------------------------------------------------
+double y, yc;
+double Te = 1 / freq;
+
+double Kp = 1.1, Ki = 0, Kd = 0;//PID coef
+double ui = 0, ud = 0, err = 0, err_p = 0;
+
+//----------------------------------------------------------------------------
+
 /**
  * Initialisation routine
  */
@@ -60,17 +60,27 @@ void loop() {
                       displayInstructions();
                      
             break;
+
+             //1
+            case 49 : 
+                      Serial.println("Send values between 0 and 100% to make the motor spin accordingly");
+                      Serial.println("Send negative value to make the program stop");
+                      fStart();
+                      commandProgram();
+                      displayInstructions();
+                                     
+            break;
             
-            //1
-            case 49 : Serial.println("Enter value between 0 and 100% of the motor speed.");
+            //2
+            case 50 : Serial.println("Enter value between 0 and 100% of the motor speed.");
                       Serial.println("Enter negative value to stop");
                       fStart();
                       testCommand();
                       displayInstructions();
             break;
 
-            //2
-            case 50 : Serial.println("Acquisition of the load cell values");
+            //3
+            case 51 : Serial.println("Acquisition of the load cell values");
                       Serial.println("Send a negative value to stop the acquisition");
                       fStart();
                       testSensor();
@@ -78,14 +88,8 @@ void loop() {
             
             break;
 
-            //3
-            case 51 : 
-                      Serial.println("Send values between 0 and 100% to make the motor spin accordingly");
-                      Serial.println("Send negative value to make the program stop");
-                      fStart();
-                      commandProgram();
-                      displayInstructions();
-                                     
+            default : displayInstructions();
+
             break;
         }
     }
@@ -134,12 +138,14 @@ void fStart(){
   Serial.println("1...");
   delay(1000);
 }
- 
+
+// Command sending
+//------------------------------------------------------------------
 
 /*
  * Conversion of the percentage of the speed of the motor in the corresponding pulse length
  */
-int setCommand(){
+int setCommandSerial(){
 
   String reading = Serial.readString();
   float ratio = reading.toInt();
@@ -151,8 +157,8 @@ int setCommand(){
   
   if(ratio < 0) return  -1;
   
-  Serial.print("Pulse length = ");
-  Serial.println(pulse);
+  // Serial.print("Pulse length = ");
+  // Serial.println(pulse);
   return pulse;
 }
 
@@ -188,7 +194,10 @@ void testCommand(){
 
   Serial.println("testCommand stopped\n\n\n");
 }
+//---------------------------------------------------------------------------
 
+// Load cell values reception
+//---------------------------------------------------------------------------
 /* 
  *  Reads the data output from the AD620 amplifier and converts it in Force (N)
  */
@@ -196,9 +205,13 @@ double getForce() {
 
   double reading = analogRead(sensorPin);
 
-  double force = map(reading, value_low, value_high, force_low, force_high);
+  int force = map(reading, value_low, value_high, force_low, force_high);
 
-  Serial.print("Force 0 to 255: ");
+  Serial.print("Force from ");
+  Serial.print(force_low);
+  Serial.print(" to ");
+  Serial.print(force_high);
+  Serial.print(" : ");
   Serial.println(force);
 
   return force;
@@ -221,6 +234,27 @@ void testSensor(){
   Serial.println("sensorTest stopped\n\n\n");
 }
 
+// control
+//-------------------------------------------------------------------
+// returns the pwm output rate to send to the ESC
+double control(double yc, double y) {
+
+  err = yc - y;
+
+  ui += Ki * Te * err;
+  ud = Kd / Te * (err - err_p);
+
+  double u = Kp * (err + ui + ud);
+
+  err_p = err;
+
+  return u;
+}
+
+//-------------------------------------------------------------------
+
+//main functions
+//-------------------------------------------------------------------
 /*
  *  Run the command transmision and the sensor acquisition
  */
@@ -229,13 +263,23 @@ void commandProgram(){
  int pulse = MIN_PULSE_LENGTH;
  
  while(pulse>=0){ //loop stops if we send a negative value
-    if(Serial.available()) pulse = setCommand();
+    if(Serial.available()) pulse = setCommandSerial();
     command(pulse); 
     getForce();
  }
  Serial.println("commandProgram stopped\n\n\n");
 }
 
+
+
+void controlProgram(){
+  int pulse = MIN_PULSE_LENGTH;
+  
+}
+//-------------------------------------------------------------------
+
+
+//-------------------------------------------------------------------
 /**
  * Displays instructions to user
  */
@@ -243,7 +287,8 @@ void displayInstructions()
 {  
     Serial.println("READY - PLEASE SEND INSTRUCTIONS AS FOLLOWING :");
     Serial.println("\t0 : Calibration of the ESC");
-    Serial.println("\t1 : Run testCommand function");
-    Serial.println("\t2 : Run testSensor function");
-    Serial.println("\t3 : Run commandProgram");
+    Serial.println("\t1 : Run commandProgram");
+    Serial.println("\t2 : Run testCommand function");
+    Serial.println("\t3 : Run testSensor function\n\n");
+    
 }

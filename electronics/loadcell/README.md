@@ -1,4 +1,4 @@
-# Load cell working
+# Load cell 
 
 We need to get the thrust force produced by the motor's rotation  
 That's where the load cell will come handy.
@@ -27,5 +27,5 @@ The load cell needs to be excited by a voltage of 5V provided by our MCU.
 ![alt text](images/wheatstone_wiring.jpg)
 
 As the use of this component in this system is to detect force from -5N to 24.5N (-0.5kgf to 2.5kgf), the output voltage it sends is about 1 mV per kgf.  
-Thus it is necessary to connect the load cell to an [amplifier](https://github.com/kevinbecquet/Thrust_Control/electronics/amplifier) before sending the data.
+Thus it is necessary to connect the load cell to an [amplifier](https://github.com/kevinbecquet/Thrust_Control/tree/master/electronics/amplifier) before sending the data.
 

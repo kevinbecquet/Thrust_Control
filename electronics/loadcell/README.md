@@ -7,6 +7,7 @@ That's where the load cell will come handy.
 The load cell used here is composed by a Wheatstone full bridge installed on an aluminium plate.
 
 ## Wheatstone bridge
+---
 
 ![alt text](images/wheatstone_full_bridge.jpg)
 
@@ -21,6 +22,7 @@ We can determine a linear relation between the input voltage and V<sub>0</sub> a
 This let us a linear tranfosmartion from the thrust force provided by the motor to a voltage that can be amplified.
 
 ## Wiring
+---
 
 The load cell needs to be excited by a voltage of 5V provided by our MCU.
 

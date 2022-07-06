@@ -100,16 +100,22 @@ void loop() {
         displayInstructions();
 
         break;
-
-     
+        
+     //5
+     case 53 : Serial.println("Kp determination");
+        Serial.println("Send values to make the coeficient change");
+        Serial.println("Send a negative value to stop the acquisition");
+        fStart();
+        KProgram();
+        displayInstructions();
+        
+        break;
       
       default : displayInstructions();
 
         break;
     }
   }
-
-
 }
 
 /*
@@ -131,21 +137,6 @@ void calibration(){
   
 }
 
-/*
- * Oneshot protocol with the percentage of motor's gas and the frequency of the signal
- * not used now, kept just in case its a better way to do
- */
-void oneShot(int ratio, int freq){
-
-  int tHigh = map(ratio, 0.0,100,125,250);
-  int period = 1000000/freq;
-  
-  digitalWrite(escPin,HIGH);
-  delayMicroseconds(tHigh);
-  
-  digitalWrite(escPin,LOW);
-  delayMicroseconds(period-tHigh);
-}
 
 /*
  * linear mapping of a value
@@ -153,7 +144,6 @@ void oneShot(int ratio, int freq){
 double map(double x, double in_min, double in_max, double out_min, double out_max) {
   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
-
 
 
 // Command sending
@@ -176,10 +166,6 @@ int setCommandSerial() {
   Serial.print("Pulse length = ");
   Serial.println(pulse);
   return pulse;
-}
-
-int setCommandControl(double u){
-  return map(u,0,19.62,127,254);
 }
 
 /*
@@ -270,6 +256,20 @@ double control(double yc, double y) {
   return u;
 }
 
+
+int setCommandControl(double u){
+  return map(u,0,19.62,127,254);
+}
+
+
+
+double determineKp(double yc, double y) {
+
+  err = yc - y;
+  
+  return Kp*err;
+
+}
 //-------------------------------------------------------------------
 
 //main functions
@@ -316,6 +316,35 @@ void controlProgram() {
   }
 
 }
+
+
+void KProgram() {
+  int Stop = 0;
+  yc = 1;
+  
+  while(Stop>=0){
+     y = getForce();
+     
+     double u = determineKp(yc,y);
+
+     int pulse = setCommandControl(u);
+     command(pulse);
+
+     if(Serial.available()){
+      
+      String reading = Serial.readString();
+      float temp = reading.toFloat();
+      Kp = temp;
+      
+      if(temp<0){
+        Stop = -1;
+        Serial.println("KProgram stopped \n\n\n");
+      }
+      Serial.print("Kp: ");
+      Serial.println(Kp);
+     }
+  }
+}
 //-------------------------------------------------------------------
 
 
@@ -346,7 +375,8 @@ void displayInstructions()
   Serial.println("\t1 : Run commandProgram");
   Serial.println("\t2 : Run controlProgram");
   Serial.println("\t3 : Run testCommand function");
-  Serial.println("\t4 : Run testSensor function\n\n");
+  Serial.println("\t4 : Run testSensor function");
+  Serial.println("\t5 : Run KProgram\n\n");
   
 
 }

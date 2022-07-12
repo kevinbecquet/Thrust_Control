@@ -1,7 +1,7 @@
 
 // ---------------------------------------------------------------------------
 // Customize here pulse frequency as needed
-#define FREQ              4000  //Output frequency in Hz
+#define FREQ              4000  // Output frequency in Hz
 #define MIN_PULSE_LENGTH  127   // == dc 50% => 125us 
 #define MAX_PULSE_LENGTH  254   // ~= dc 100% => 250us
 // ---------------------------------------------------------------------------
@@ -14,13 +14,11 @@ int escPin = 12;
 // ---------------------------------------------------------------------------
 int sensorPin = 8;
 
-#define G 9.81 // acceleration of Earth's gravity
 
-#define VALUE_LOW 0 //output value of the sensor when the motor is unloaded
-#define FORCE_LOW -0.5 * G// Force developped by -0.5kg -> -5 N
-
-#define VALUE_HIGH 1023 //output value of the sensor when the motor is loaded by 2.5 kg
-#define FORCE_HIGH 2.5 * G // Force developped by 2 kg (F = m*g) -> 24.5 N
+#define VALUE_LOW 108  // output value of the sensor when the motor is loaded by -5N
+#define FORCE_LOW -5   // Minimum of the motor working range : -5 N
+#define VALUE_HIGH 918 // output value of the sensor when the motor is loaded by 25N
+#define FORCE_HIGH 25  // Maximum of the motor working range : 25 N
 
 //----------------------------------------------------------------------------
 
@@ -59,8 +57,7 @@ void loop() {
     switch (data) {
       // 0
       case 48 : calibration();
-        displayInstructions();
-
+        
         break;
 
       //1
@@ -96,7 +93,7 @@ void loop() {
       case 52 : Serial.println("Acquisition of the load cell values");
         Serial.println("Send a negative value to stop the acquisition");
         fStart();
-        testSensor();
+        testSensor(2000);
         displayInstructions();
 
         break;
@@ -104,6 +101,7 @@ void loop() {
      
       
       default : displayInstructions();
+                analogWrite(escPin,MIN_PULSE_LENGTH);
 
         break;
     }
@@ -123,7 +121,7 @@ void calibration(){
   analogWrite(escPin,MAX_PULSE_LENGTH  );
   delay(8000);
 
-  Serial.println("Sending maximum throttle");
+  Serial.println("Sending minimum throttle");
   analogWrite(escPin,MIN_PULSE_LENGTH  );
   delay(8000);
 
@@ -132,29 +130,11 @@ void calibration(){
 }
 
 /*
- * Oneshot protocol with the percentage of motor's gas and the frequency of the signal
- * not used now, kept just in case its a better way to do
- */
-void oneShot(int ratio, int freq){
-
-  int tHigh = map(ratio, 0.0,100,125,250);
-  int period = 1000000/freq;
-  
-  digitalWrite(escPin,HIGH);
-  delayMicroseconds(tHigh);
-  
-  digitalWrite(escPin,LOW);
-  delayMicroseconds(period-tHigh);
-}
-
-/*
  * linear mapping of a value
  */
 double map(double x, double in_min, double in_max, double out_min, double out_max) {
   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
-
-
 
 // Command sending
 //------------------------------------------------------------------
@@ -168,13 +148,13 @@ int setCommandSerial() {
   float ratio = reading.toInt();
 
   int pulse = map(ratio, 0, 100, MIN_PULSE_LENGTH  , MAX_PULSE_LENGTH  );
-  Serial.print("Ratio value in % = ");
-  Serial.println(ratio);
+//  Serial.print("Ratio value in % = ");
+//  Serial.println(ratio);
 
   if (ratio < 0 || ratio > 100) return  -1;
 
-  Serial.print("Pulse length = ");
-  Serial.println(pulse);
+//  Serial.print("Pulse length = ");
+//  Serial.println(pulse);
   return pulse;
 }
 
@@ -220,34 +200,70 @@ void testCommand() {
  */
 double getForce() {
 
-  double reading = analogRead(sensorPin);
+ 
+ double reading = analogRead(sensorPin);
 
-  int force = map(reading, VALUE_LOW, VALUE_HIGH, FORCE_LOW, FORCE_HIGH);
+ double force = map(reading, VALUE_LOW, VALUE_HIGH, FORCE_LOW, FORCE_HIGH);
+
+ return force;
+
+}
+
+double median(int n){
+  double tab[n] = {0};
+  for(int i =0 ; i< 10; i++){
+    double force = getForce();
+    int placed = 0; 
+    
+    for(int j = 0; j<i; j++){
+      if(tab[j] > force){
+
+        placed = 1;
+        
+        double temp = tab[j];
+        tab[j] = force;
+        
+        for(int k = j+1;k<=i;k++){
+          double temp2 = tab[k];
+          tab[k] = temp;
+          temp = temp2;
+        }
+        break;
+      }
+      if (placed == 0) tab[i] = force;
+    }
+  }
 
   Serial.print("Force from ");
   Serial.print(FORCE_LOW);
   Serial.print(" to ");
   Serial.print(FORCE_HIGH);
   Serial.print(" : ");
-  Serial.println(force);
-
-  return force;
+  Serial.println(tab[(int)(n/2)]);
+  
+  return tab[(int)(n/2)];
 }
-
 /*
  *  Tests the load cell value acquisition
  */
-void testSensor() {
+void testSensor(int freq) {
   int i = 0;
   while (i >= 0) {
-
+    
+    
     if (Serial.available()) { //loop stops if we send a negative value
       String reading = Serial.readString();
       i = reading.toInt();
     }
-
-    getForce();
+    long timer = micros();
+    
+    median(15);
+    int t = 1000000/freq -(micros()-timer);
+    if (t >=0) delayMicroseconds(t); // wait until the next period (2kHz)
+    
+    
   }
+  
   Serial.println("sensorTest stopped\n\n\n");
 }
 

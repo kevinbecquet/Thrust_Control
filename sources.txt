@@ -1,10 +1,8 @@
-Opencm 9.04 board doc :
+Opencm 9.04 board documentation :
 https://emanual.robotis.com/docs/en/parts/controller/opencm904/
 
-
-Load cell use tutorial: 
-https://randomnerdtutorials.com/arduino-load-cell-hx711/
-
+AD620 datasheet : 
+http://users.ece.utexas.edu/~valvano/Datasheets/AD620.pdf
 
 ESC's MCU datasheet : 
 https://pdf1.alldatasheet.com/datasheet-pdf/view/466566/STMICROELECTRONICS/STM32F051C4.html

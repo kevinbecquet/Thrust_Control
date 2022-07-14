@@ -8,18 +8,23 @@
 char data;
 int escPin = 12;
 // ---------------------------------------------------------------------------
-
+HardwareTimer Timer(TIMER_CH1);
 
 // Load Cell calibration
 // ---------------------------------------------------------------------------
 int sensorPin = 8;
 
-
-#define VALUE_LOW 108  // output value of the sensor when the motor is loaded by -5N
-#define FORCE_LOW -5   // Minimum of the motor working range : -5 N
-#define VALUE_HIGH 918 // output value of the sensor when the motor is loaded by 25N
+#define FORCE_LOW  -5  // Minimum of the motor working range : -5 N
 #define FORCE_HIGH 25  // Maximum of the motor working range : 25 N
+#define FORCE_INIT 0   // Referential force used to tare the load cell
 
+double refValue  = 219;  // Output value of the sensor when the motor is unloaded
+double refForce = 0;
+
+double SLOPE =1.0/27.0;
+
+double lowPassLast;
+bool lowPassFirst = true;
 //----------------------------------------------------------------------------
 
 //control
@@ -29,7 +34,7 @@ int sensorPin = 8;
 double y = 0, yc = 1;
 double Te = 1 / FREQ;
 
-double Kp = 0, Ki = 0, Kd = 0;//PID coef
+double Kp = 0.1 , Ki = 0, Kd = 0;//PID coef
 double ui = 0, ud = 0, err = 0, err_p = 0;
 
 //----------------------------------------------------------------------------
@@ -41,6 +46,7 @@ void setup() {
   Serial.begin(9600);
 
   pinMode(escPin,OUTPUT);
+  pinMode(sensorPin,INPUT);
   
   drv_pwm_setup_freq(escPin,FREQ); // setting the MCU's pwm frequency up to the desired frequency
   
@@ -51,18 +57,20 @@ void setup() {
  *  Main function
  */
 void loop() {
+  analogWrite(escPin,MIN_PULSE_LENGTH);
   if (Serial.available()) {
     data = Serial.read();
 
     switch (data) {
       // 0
-      case 48 : calibration();
+      case 48 : escCalibration();
+                ampCalibration();
         
         break;
 
       //1
       case 49 :
-        Serial.println("Send values between 0 and 100% to make the motor spin accordingly");
+        Serial.println("commandProgram:\nSend values between 0 and 100% to make the motor spin accordingly");
         Serial.println("Send negative value to make the program stop");
         fStart();
         commandProgram();
@@ -72,7 +80,7 @@ void loop() {
 
       //2
       case 50 :
-        Serial.println("Send values between 0 and 100% to make the motor spin accordingly");
+        Serial.println("controlProgram:\nSend values between 0 and 100% to make the motor spin accordingly");
         Serial.println("Send negative value to make the program stop");
         fStart();
         controlProgram();
@@ -109,7 +117,7 @@ void loop() {
         break;
       
       default : displayInstructions();
-                analogWrite(escPin,MIN_PULSE_LENGTH);
+                
 
         break;
     }
@@ -119,22 +127,27 @@ void loop() {
 /*
  *  Calibrates the ESC
  */
-void calibration(){
+void escCalibration(){
 
   Serial.println("Calibration start");
   
   Serial.println("Sending maximum throttle");
   analogWrite(escPin,MAX_PULSE_LENGTH  );
-  delay(8000);
+  delay(800);
 
   Serial.println("Sending minimum throttle");
   analogWrite(escPin,MIN_PULSE_LENGTH  );
-  delay(8000);
+  delay(800);
 
   Serial.println("Calibration end\n\n\n");
   
 }
 
+void ampCalibration(){
+
+ refValue = median(100,1);
+ refForce = FORCE_INIT;
+}
 
 /*
  * linear mapping of a value
@@ -143,6 +156,12 @@ double map(double x, double in_min, double in_max, double out_min, double out_ma
   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
+/*
+ * linear mapping from a starting point (input,output) and a slope
+ */
+double map(double x, double input, double output, double slope){
+  return (x-input) * slope + output;
+}
 
 // Command sending
 //------------------------------------------------------------------
@@ -155,14 +174,12 @@ int setCommandSerial() {
   String reading = Serial.readString();
   float ratio = reading.toInt();
 
-  int pulse = map(ratio, 0, 100, MIN_PULSE_LENGTH  , MAX_PULSE_LENGTH  );
+  int pulse = map(ratio, 0,100, MIN_PULSE_LENGTH , MAX_PULSE_LENGTH);
 //  Serial.print("Ratio value in % = ");
 //  Serial.println(ratio);
 
   if (ratio < 0 || ratio > 100) return  -1;
 
-//  Serial.print("Pulse length = ");
-//  Serial.println(pulse);
   return pulse;
 }
 
@@ -173,7 +190,7 @@ void command(int pulse) {
 
   // if pulse isn't coherent value the motor stops
   if (pulse < MIN_PULSE_LENGTH   || pulse > MAX_PULSE_LENGTH  ) {
-    analogWrite(escPin,MIN_PULSE_LENGTH  );
+    analogWrite(escPin,MIN_PULSE_LENGTH);
     
   }
   else {
@@ -192,7 +209,6 @@ void testCommand() {
     if (Serial.available()) pulse = setCommandSerial();
     command(pulse);
   }
-
   Serial.println("testCommand stopped\n\n\n");
 }
 //---------------------------------------------------------------------------
@@ -206,22 +222,24 @@ double getForce() {
 
  
  double reading = analogRead(sensorPin);
-
- double force = map(reading, VALUE_LOW, VALUE_HIGH, FORCE_LOW, FORCE_HIGH);
-
+ double force = map(reading, refValue, refForce, SLOPE);
  return force;
-
 }
+/*
+ * return the median value of the n next acquired values
+ * mode : 0 to get values converted in N | 1 to get raw values 
+ */
+double median(int n,int mode){
 
-double median(int n){
+  long timer = micros();
   double tab[n] = {0};
-  for(int i =0 ; i< 10; i++){
-    double force = getForce();
+  
+  for(int i =0 ; i< n; i++){
+    double force =(mode == 0 )? getForce() : analogRead(sensorPin);
     int placed = 0; 
     
     for(int j = 0; j<i; j++){
       if(tab[j] > force){
-
         placed = 1;
         
         double temp = tab[j];
@@ -238,15 +256,65 @@ double median(int n){
     }
   }
 
-  Serial.print("Force from ");
+  Serial.print("Median Force from ");
   Serial.print(FORCE_LOW);
   Serial.print(" to ");
   Serial.print(FORCE_HIGH);
   Serial.print(" : ");
+
   Serial.println(tab[(int)(n/2)]);
+
+  Serial.print("median time in us: ");
+  Serial.println(micros()-timer);
   
   return tab[(int)(n/2)];
 }
+
+double average(int n , int mode){
+  long timer = micros();
+  double sum = 0;
+
+  for (int i = 0; i <n; i++){
+    sum +=(mode == 0)? getForce() : analogRead(sensorPin);
+    
+  }
+ 
+//  Serial.print("average time in us: ");
+//  Serial.println(micros()-timer);
+  
+  return sum/n;
+}
+
+double lowPass(double alpha){
+
+  double out;
+  if(lowPassFirst){
+    lowPassFirst = false;
+    out = getForce();
+   
+  }
+  
+  else {
+    out = alpha * getForce() + (1- alpha)* lowPassLast;
+  }
+  
+  lowPassLast = out;
+  return out;
+  
+}
+
+void printForce(double force){
+  
+//   Serial.print("Average Force from ");
+//  Serial.print(FORCE_LOW);
+//  Serial.print(" to ");
+//  Serial.print(FORCE_HIGH);
+//  Serial.print(" : ");
+
+  Serial.println(force);
+
+}
+
 /*
  *  Tests the load cell value acquisition
  */
@@ -259,11 +327,12 @@ void testSensor(int freq) {
       String reading = Serial.readString();
       i = reading.toInt();
     }
-    long timer = micros();
+//    long timer = micros();
     
-    median(15);
-    int t = 1000000/freq -(micros()-timer);
-    if (t >=0) delayMicroseconds(t); // wait until the next period (2kHz)
+    median(15,0);
+    average(15,0);
+//    int t = 1000000/freq -(micros()-timer);
+//    if (t >=0) delayMicroseconds(t); // wait until the next period (2kHz)
     
     
   }
@@ -297,7 +366,7 @@ int setCommandControl(double u){
 
 
 
-double determineKp(double yc, double y) {
+double propControl(double yc, double y) {
 
   err = yc - y;
   
@@ -313,12 +382,27 @@ double determineKp(double yc, double y) {
  */
 void commandProgram() {
 
-  int pulse = MIN_PULSE_LENGTH;
-
+  int pulse = MIN_PULSE_LENGTH, i = 0;
+  
   while (pulse >= 0) { //loop stops if we send a negative value
+
+    long timer = micros();
+    
     if (Serial.available()) pulse = setCommandSerial();
     command(pulse);
-    getForce();
+    //median(25,0);
+    double f = lowPass(0.01);
+
+    
+   
+  Serial.print(5);
+  Serial.print(0);
+  
+    Serial.print("F: ");
+    Serial.println(f);
+
+//    Serial.print("time : ");
+//    Serial.println(micros()-timer);
   }
   Serial.println("commandProgram stopped\n\n\n");
 }
@@ -331,7 +415,7 @@ void controlProgram() {
   int Stop = 0;
   
   while(Stop>=0){
-     y = getForce();
+     y = median(10,0);
      
      double u = control(yc,y);
 
@@ -354,23 +438,23 @@ void controlProgram() {
 
 void KProgram() {
   int Stop = 0;
-  yc = 1;
+  yc = 5;
   
   while(Stop>=0){
-     y = getForce();
+     y = median(25,0); // get the force
      
-     double u = determineKp(yc,y);
+     double u = propControl(yc,y); // determine the force to send 
 
-     int pulse = setCommandControl(u);
-     command(pulse);
+     int pulse = setCommandControl(u); // convert it in a pulse usable by the esc
+     command(pulse); // send the pulse
 
-     if(Serial.available()){
+     if(Serial.available()){ // Kp can be modified 
       
       String reading = Serial.readString();
       float temp = reading.toFloat();
       Kp = temp;
       
-      if(temp<0){
+      if(temp<0){ // stop the program
         Stop = -1;
         Serial.println("KProgram stopped \n\n\n");
       }

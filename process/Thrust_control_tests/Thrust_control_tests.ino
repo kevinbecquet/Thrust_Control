@@ -8,7 +8,7 @@
 char data;
 int escPin = 12;
 // ---------------------------------------------------------------------------
-HardwareTimer Timer(TIMER_CH1);
+
 
 // Load Cell calibration
 // ---------------------------------------------------------------------------
@@ -349,7 +349,8 @@ double control(double yc, double y) {
 
   err = yc - y;
 
-  if(ui < ANTIWINDUP_THRESH) ui+= Ki*Te*err; //integral term with anti wind up
+  //if(ui < ANTIWINDUP_THRESH) 
+    ui+= Ki*Te*err; //integral term with anti wind up
   ud = Kd / Te * (err - err_p);         //derivative term
 
   double u = Kp * (err + ui + ud);      //PID output
@@ -360,9 +361,7 @@ double control(double yc, double y) {
 }
 
 
-int setCommandControl(double u){
-  return map(u,0,19.62,127,254);
-}
+
 
 
 

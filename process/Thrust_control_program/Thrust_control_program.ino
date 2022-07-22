@@ -28,7 +28,7 @@ bool filterFirst = true;
 #define ANTIWINDUP_THRESH FORCE_HIGH
 double y = 0.0, yc = 0.0;
 
-double Kp = 0.5 , Ki = 0.0, Kd = 0.0, Kff=0.0;//PID coef
+double Kp = 1 , Ki = 0.0, Kd = 0.0, Kff=0.0;//PID coef
 double Pout = 0.0, Iout = 0.0, Dout = 0.0, err = 0.0, err_p = 0.0;
 
 bool ok = false;
@@ -48,6 +48,7 @@ int pulse = MIN_PULSE_LENGTH;
 // see time
 // ---------------------------------------------------------------------------
 long timing;
+int count = 0;
 
 
 void setup() {
@@ -83,7 +84,7 @@ void loop(){
 
 void interrupt(){
 //  long timer = micros();  
-
+  count++;
   if (Serial.available()){
     ok = true;
     yc = setForceCommand();
@@ -99,7 +100,7 @@ void interrupt(){
  
   if(ok){
     
-      double u = control(yc,y);    
+    double u = control(yc,y);    
     pulse = force2PWM(u);    
     command(pulse);  
   }
@@ -107,14 +108,17 @@ void interrupt(){
 //  Serial.print(" Time : ");
 //  Serial.print(timer - timing);
 //
-//  Serial.print(" F: ");
-  Serial.print(y);
+//  Serial.print(count);
+//  Serial.print(",");
+//  Serial.print(y,4);
 //
-  Serial.print(" pulse: ");
-  Serial.print(pulse);
+//  Serial.print(",");
+//  Serial.print(pulse);
 //Serial.print("\t");
 //Serial.print(micros()-timer);
-  Serial.println();
+//  Serial.println();
+
+  Serial.printf("%d,%f\n",count,y);
   
 //      timing =timer;
 }
@@ -277,11 +281,11 @@ double force2PWM(double f){
 void command(double pulse) {
 
   // if pulse isn't coherent value the motor stops
-//  if (pulse < MIN_PULSE_LENGTH   || pulse > MAX_PULSE_LENGTH  ) {
-//   drv_pwm_set_duty_mod(escPin,PWM_RES,MIN_PULSE_LENGTH);
-//  }
-//  else {
+  if (pulse < MIN_PULSE_LENGTH   || pulse > MAX_PULSE_LENGTH  ) {
+   drv_pwm_set_duty_mod(escPin,PWM_RES,MIN_PULSE_LENGTH);
+  }
+  else {
      drv_pwm_set_duty_mod(escPin,PWM_RES,pulse);
-//  }
-  Serial.println("new command");
+  }
+
 }

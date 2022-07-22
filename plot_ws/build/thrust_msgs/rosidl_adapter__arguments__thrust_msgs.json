@@ -1,0 +1,6 @@
+{
+  "package_name": "thrust_msgs",
+  "non_idl_tuples": [
+    "/home/kevin/Documents/Thrust_Control/plot_ws/src/thrust_msgs:msg/Thrust.msg"
+  ]
+}

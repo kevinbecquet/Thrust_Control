@@ -1,0 +1,21 @@
+[0.020s] Invoking command in '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot:/home/kevin/Documents/Thrust_Control/plot_ws/install/py_pudsub:/opt/ros/galactic /usr/bin/cmake --build /home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs -- -j8 -l8
+[0.046s] -- Found ament_cmake: 1.1.5 (/opt/ros/galactic/share/ament_cmake/cmake)
+[0.074s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.133s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.141s] -- Found ament_lint_auto: 0.10.7 (/opt/ros/galactic/share/ament_lint_auto/cmake)
+[0.204s] -- Found rosidl_default_generators: 1.1.1 (/opt/ros/galactic/share/rosidl_default_generators/cmake)
+[0.207s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.210s] -- Found rosidl_adapter: 2.2.2 (/opt/ros/galactic/share/rosidl_adapter/cmake)
+[0.339s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.388s] -- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+[0.445s] CMake Error at /opt/ros/galactic/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:162 (message):
+[0.445s]   rosidl_generate_interfaces() the passed dependency 'std_msgs' has not been
+[0.445s]   found before using find_package()
+[0.445s] Call Stack (most recent call first):
+[0.445s]   CMakeLists.txt:27 (rosidl_generate_interfaces)
+[0.445s] 
+[0.445s] 
+[0.446s] -- Configuring incomplete, errors occurred!
+[0.446s] See also "/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs/CMakeFiles/CMakeOutput.log".
+[0.451s] make: *** [Makefile:748: cmake_check_build_system] Error 1
+[0.453s] Invoked command in '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot:/home/kevin/Documents/Thrust_Control/plot_ws/install/py_pudsub:/opt/ros/galactic /usr/bin/cmake --build /home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs -- -j8 -l8

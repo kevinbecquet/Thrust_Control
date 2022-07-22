@@ -1,0 +1,12 @@
+std_msgs/Header header
+
+float64 thrust    # [N]
+
+float64 alpha     # lowpass filter coef between 0 and 1
+
+float64 kp        # proportionnal coef of the controller
+float64 ki        # integral coef of the controller
+float64 kd        # derivative coef of the controller
+float64 kff       # fast forward  coef of the controller
+
+uint8 mode          # 0 if the message is just a thrust command 1 if it's a whole configuration

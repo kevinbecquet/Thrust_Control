@@ -1,0 +1,40 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from thrust_msgs/msg/Thrust.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module thrust_msgs {
+  module msg {
+    struct Thrust {
+      std_msgs::msg::Header header;
+
+      @unit (value="N")
+      double thrust;
+
+      @verbatim (language="comment", text=
+        " lowpass filter coef between 0 and 1")
+      double alpha;
+
+      @verbatim (language="comment", text=
+        " proportionnal coef of the controller")
+      double kp;
+
+      @verbatim (language="comment", text=
+        " integral coef of the controller")
+      double ki;
+
+      @verbatim (language="comment", text=
+        " derivative coef of the controller")
+      double kd;
+
+      @verbatim (language="comment", text=
+        " fast forward  coef of the controller")
+      double kff;
+
+      @verbatim (language="comment", text=
+        " 0 if the message is just a thrust command 1 if it's a whole configuration")
+      uint8 mode;
+    };
+  };
+};

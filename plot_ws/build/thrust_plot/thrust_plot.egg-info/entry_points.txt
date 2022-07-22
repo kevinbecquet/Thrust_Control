@@ -1,0 +1,3 @@
+[console_scripts]
+thrust_plot = thrust_plot.thrust_plot:main
+

@@ -1,0 +1,23 @@
+running develop
+running egg_info
+creating thrust_plot.egg-info
+writing thrust_plot.egg-info/PKG-INFO
+writing dependency_links to thrust_plot.egg-info/dependency_links.txt
+writing entry points to thrust_plot.egg-info/entry_points.txt
+writing requirements to thrust_plot.egg-info/requires.txt
+writing top-level names to thrust_plot.egg-info/top_level.txt
+writing manifest file 'thrust_plot.egg-info/SOURCES.txt'
+reading manifest file 'thrust_plot.egg-info/SOURCES.txt'
+writing manifest file 'thrust_plot.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/python3.8/site-packages/site.py
+Creating /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/python3.8/site-packages/thrust-plot.egg-link (link to .)
+Installing thrust_plot script to /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/thrust_plot
+
+Installed /home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot
+running install_data
+creating /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/share/ament_index
+creating /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/share/ament_index/resource_index
+creating /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/share/ament_index/resource_index/packages
+copying resource/thrust_plot -> /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/share/ament_index/resource_index/packages
+copying package.xml -> /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/share/thrust_plot

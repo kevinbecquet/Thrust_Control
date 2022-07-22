@@ -1,0 +1,217 @@
+[0.162s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.162s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f0ca12929d0>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=8, paths=None, symlink_install=True, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f0ca12929d0>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f0ca1292f40>)
+[0.189s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.189s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.189s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.189s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.189s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.189s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.189s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/kevin/Documents/Thrust_Control/plot_ws'
+[0.189s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/thrust_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/thrust_msgs) by extension 'ignore'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/thrust_msgs) by extension 'ignore_ament_install'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/thrust_msgs) by extensions ['colcon_pkg']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/thrust_msgs) by extension 'colcon_pkg'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/thrust_msgs) by extensions ['colcon_meta']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/thrust_msgs) by extension 'colcon_meta'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/thrust_msgs) by extensions ['ros']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/thrust_msgs) by extension 'ros'
+[0.215s] DEBUG:colcon.colcon_core.package_identification:Package 'src/thrust_msgs' with type 'ros.ament_cmake' and name 'thrust_msgs'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/thrust_plot) by extensions ['ignore', 'ignore_ament_install']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/thrust_plot) by extension 'ignore'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/thrust_plot) by extension 'ignore_ament_install'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/thrust_plot) by extensions ['colcon_pkg']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/thrust_plot) by extension 'colcon_pkg'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/thrust_plot) by extensions ['colcon_meta']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/thrust_plot) by extension 'colcon_meta'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/thrust_plot) by extensions ['ros']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/thrust_plot) by extension 'ros'
+[0.216s] DEBUG:colcon.colcon_core.package_identification:Package 'src/thrust_plot' with type 'ros.ament_python' and name 'thrust_plot'
+[0.216s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.217s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.217s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.217s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.217s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.240s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.240s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.242s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.242s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/kevin/Documents/Thrust_Control/plot_ws/install/py_pudsub' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.242s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.242s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.244s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 0 installed packages in /home/kevin/Documents/Thrust_Control/plot_ws/install
+[0.246s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 278 installed packages in /opt/ros/galactic
+[0.248s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.334s] Level 5:colcon.colcon_core.verb:set package 'thrust_msgs' build argument 'cmake_args' from command line to 'None'
+[0.334s] Level 5:colcon.colcon_core.verb:set package 'thrust_msgs' build argument 'cmake_target' from command line to 'None'
+[0.334s] Level 5:colcon.colcon_core.verb:set package 'thrust_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.334s] Level 5:colcon.colcon_core.verb:set package 'thrust_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.334s] Level 5:colcon.colcon_core.verb:set package 'thrust_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.334s] Level 5:colcon.colcon_core.verb:set package 'thrust_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.334s] Level 5:colcon.colcon_core.verb:set package 'thrust_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.334s] Level 5:colcon.colcon_core.verb:set package 'thrust_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.334s] Level 5:colcon.colcon_core.verb:set package 'thrust_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.334s] DEBUG:colcon.colcon_core.verb:Building package 'thrust_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs', 'merge_install': False, 'path': '/home/kevin/Documents/Thrust_Control/plot_ws/src/thrust_msgs', 'symlink_install': True, 'test_result_base': None}
+[0.335s] Level 5:colcon.colcon_core.verb:set package 'thrust_plot' build argument 'cmake_args' from command line to 'None'
+[0.336s] Level 5:colcon.colcon_core.verb:set package 'thrust_plot' build argument 'cmake_target' from command line to 'None'
+[0.336s] Level 5:colcon.colcon_core.verb:set package 'thrust_plot' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.336s] Level 5:colcon.colcon_core.verb:set package 'thrust_plot' build argument 'cmake_clean_cache' from command line to 'False'
+[0.336s] Level 5:colcon.colcon_core.verb:set package 'thrust_plot' build argument 'cmake_clean_first' from command line to 'False'
+[0.336s] Level 5:colcon.colcon_core.verb:set package 'thrust_plot' build argument 'cmake_force_configure' from command line to 'False'
+[0.336s] Level 5:colcon.colcon_core.verb:set package 'thrust_plot' build argument 'ament_cmake_args' from command line to 'None'
+[0.336s] Level 5:colcon.colcon_core.verb:set package 'thrust_plot' build argument 'catkin_cmake_args' from command line to 'None'
+[0.336s] Level 5:colcon.colcon_core.verb:set package 'thrust_plot' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.336s] DEBUG:colcon.colcon_core.verb:Building package 'thrust_plot' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot', 'merge_install': False, 'path': '/home/kevin/Documents/Thrust_Control/plot_ws/src/thrust_plot', 'symlink_install': True, 'test_result_base': None}
+[0.337s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.344s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.344s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/kevin/Documents/Thrust_Control/plot_ws/src/thrust_msgs' with build type 'ament_cmake'
+[0.344s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/kevin/Documents/Thrust_Control/plot_ws/src/thrust_msgs'
+[0.349s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.349s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.349s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.363s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot:/home/kevin/Documents/Thrust_Control/plot_ws/install/py_pudsub:/opt/ros/galactic /usr/bin/cmake /home/kevin/Documents/Thrust_Control/plot_ws/src/thrust_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs
+[1.544s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot:/home/kevin/Documents/Thrust_Control/plot_ws/install/py_pudsub:/opt/ros/galactic /usr/bin/cmake /home/kevin/Documents/Thrust_Control/plot_ws/src/thrust_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs
+[1.547s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot:/home/kevin/Documents/Thrust_Control/plot_ws/install/py_pudsub:/opt/ros/galactic /usr/bin/cmake --build /home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs -- -j8 -l8
+[4.147s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot:/home/kevin/Documents/Thrust_Control/plot_ws/install/py_pudsub:/opt/ros/galactic /usr/bin/cmake --build /home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs -- -j8 -l8
+[4.202s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot:/home/kevin/Documents/Thrust_Control/plot_ws/install/py_pudsub:/opt/ros/galactic /usr/bin/cmake --install /home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs
+[4.743s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(thrust_msgs)
+[4.743s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot:/home/kevin/Documents/Thrust_Control/plot_ws/install/py_pudsub:/opt/ros/galactic /usr/bin/cmake --install /home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs
+[4.750s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs' for CMake module files
+[4.751s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs' for CMake config files
+[4.752s] Level 1:colcon.colcon_core.shell:create_environment_hook('thrust_msgs', 'cmake_prefix_path')
+[4.754s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/hook/cmake_prefix_path.ps1'
+[4.755s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/hook/cmake_prefix_path.dsv'
+[4.755s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/hook/cmake_prefix_path.sh'
+[4.756s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib'
+[4.756s] Level 1:colcon.colcon_core.shell:create_environment_hook('thrust_msgs', 'ld_library_path_lib')
+[4.758s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/hook/ld_library_path_lib.ps1'
+[4.759s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/hook/ld_library_path_lib.dsv'
+[4.759s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/hook/ld_library_path_lib.sh'
+[4.759s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/bin'
+[4.759s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/pkgconfig/thrust_msgs.pc'
+[4.760s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/python3.8/site-packages'
+[4.760s] Level 1:colcon.colcon_core.shell:create_environment_hook('thrust_msgs', 'pythonpath')
+[4.762s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/hook/pythonpath.ps1'
+[4.762s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/hook/pythonpath.dsv'
+[4.762s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/hook/pythonpath.sh'
+[4.763s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/bin'
+[4.765s] INFO:colcon.colcon_core.shell:Creating package script '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/package.ps1'
+[4.766s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/package.dsv'
+[4.767s] INFO:colcon.colcon_core.shell:Creating package script '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/package.sh'
+[4.767s] INFO:colcon.colcon_core.shell:Creating package script '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/package.bash'
+[4.768s] INFO:colcon.colcon_core.shell:Creating package script '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/package.zsh'
+[4.768s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/colcon-core/packages/thrust_msgs)
+[4.814s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(thrust_msgs)
+[4.818s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs' for CMake module files
+[4.818s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs' for CMake config files
+[4.819s] Level 1:colcon.colcon_core.shell:create_environment_hook('thrust_msgs', 'cmake_prefix_path')
+[4.821s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/hook/cmake_prefix_path.ps1'
+[4.822s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/hook/cmake_prefix_path.dsv'
+[4.822s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/hook/cmake_prefix_path.sh'
+[4.823s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib'
+[4.823s] Level 1:colcon.colcon_core.shell:create_environment_hook('thrust_msgs', 'ld_library_path_lib')
+[4.825s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/hook/ld_library_path_lib.ps1'
+[4.825s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/hook/ld_library_path_lib.dsv'
+[4.825s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/hook/ld_library_path_lib.sh'
+[4.826s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/bin'
+[4.826s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/pkgconfig/thrust_msgs.pc'
+[4.826s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/python3.8/site-packages'
+[4.826s] Level 1:colcon.colcon_core.shell:create_environment_hook('thrust_msgs', 'pythonpath')
+[4.829s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/hook/pythonpath.ps1'
+[4.829s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/hook/pythonpath.dsv'
+[4.829s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/hook/pythonpath.sh'
+[4.830s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/bin'
+[4.832s] INFO:colcon.colcon_core.shell:Creating package script '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/package.ps1'
+[4.833s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/package.dsv'
+[4.833s] INFO:colcon.colcon_core.shell:Creating package script '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/package.sh'
+[4.834s] INFO:colcon.colcon_core.shell:Creating package script '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/package.bash'
+[4.834s] INFO:colcon.colcon_core.shell:Creating package script '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/package.zsh'
+[4.834s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/colcon-core/packages/thrust_msgs)
+[4.835s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/kevin/Documents/Thrust_Control/plot_ws/src/thrust_plot' with build type 'ament_python'
+[4.835s] Level 1:colcon.colcon_core.shell:create_environment_hook('thrust_plot', 'ament_prefix_path')
+[4.837s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/share/thrust_plot/hook/ament_prefix_path.ps1'
+[4.838s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/share/thrust_plot/hook/ament_prefix_path.dsv'
+[4.838s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/share/thrust_plot/hook/ament_prefix_path.sh'
+[4.841s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.841s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.081s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/kevin/Documents/Thrust_Control/plot_ws/src/thrust_plot'
+[5.084s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.084s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.480s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot': PYTHONPATH=/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/python3.8/site-packages:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/python3.8/site-packages:/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/python3.8/site-packages:/home/kevin/Documents/Thrust_Control/plot_ws/build/py_pudsub:/home/kevin/Documents/Thrust_Control/plot_ws/install/py_pudsub/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages /usr/bin/python3 setup.py develop --prefix /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot --editable --build-directory /home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot/build --no-deps install_data --install-dir /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot
+[5.950s] Level 1:colcon.colcon_core.shell:create_environment_hook('thrust_plot', 'pythonpath_develop')
+[5.950s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot' returned '0': PYTHONPATH=/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/python3.8/site-packages:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/python3.8/site-packages:/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/python3.8/site-packages:/home/kevin/Documents/Thrust_Control/plot_ws/build/py_pudsub:/home/kevin/Documents/Thrust_Control/plot_ws/install/py_pudsub/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages /usr/bin/python3 setup.py develop --prefix /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot --editable --build-directory /home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot/build --no-deps install_data --install-dir /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot
+[5.954s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot/share/thrust_plot/hook/pythonpath_develop.ps1'
+[5.955s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot/share/thrust_plot/hook/pythonpath_develop.dsv'
+[5.955s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot/share/thrust_plot/hook/pythonpath_develop.sh'
+[5.960s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot' for CMake module files
+[5.960s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot' for CMake config files
+[5.961s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib'
+[5.961s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/bin'
+[5.961s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/pkgconfig/thrust_plot.pc'
+[5.962s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/python3.8/site-packages'
+[5.962s] Level 1:colcon.colcon_core.shell:create_environment_hook('thrust_plot', 'pythonpath')
+[5.964s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/share/thrust_plot/hook/pythonpath.ps1'
+[5.965s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/share/thrust_plot/hook/pythonpath.dsv'
+[5.965s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/share/thrust_plot/hook/pythonpath.sh'
+[5.965s] Level 1:colcon.colcon_core.environment:checking '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/bin'
+[5.966s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(thrust_plot)
+[5.968s] INFO:colcon.colcon_core.shell:Creating package script '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/share/thrust_plot/package.ps1'
+[5.969s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/share/thrust_plot/package.dsv'
+[5.969s] INFO:colcon.colcon_core.shell:Creating package script '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/share/thrust_plot/package.sh'
+[5.970s] INFO:colcon.colcon_core.shell:Creating package script '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/share/thrust_plot/package.bash'
+[5.970s] INFO:colcon.colcon_core.shell:Creating package script '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/share/thrust_plot/package.zsh'
+[5.971s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/share/colcon-core/packages/thrust_plot)
+[5.971s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[5.972s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[5.972s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[5.972s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[5.980s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[5.980s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[5.980s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[5.995s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[5.999s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kevin/Documents/Thrust_Control/plot_ws/install/local_setup.ps1'
+[6.001s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/kevin/Documents/Thrust_Control/plot_ws/install/_local_setup_util_ps1.py'
+[6.003s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kevin/Documents/Thrust_Control/plot_ws/install/setup.ps1'
+[6.006s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kevin/Documents/Thrust_Control/plot_ws/install/local_setup.sh'
+[6.007s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/kevin/Documents/Thrust_Control/plot_ws/install/_local_setup_util_sh.py'
+[6.008s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kevin/Documents/Thrust_Control/plot_ws/install/setup.sh'
+[6.010s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kevin/Documents/Thrust_Control/plot_ws/install/local_setup.bash'
+[6.011s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kevin/Documents/Thrust_Control/plot_ws/install/setup.bash'
+[6.014s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kevin/Documents/Thrust_Control/plot_ws/install/local_setup.zsh'
+[6.014s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kevin/Documents/Thrust_Control/plot_ws/install/setup.zsh'

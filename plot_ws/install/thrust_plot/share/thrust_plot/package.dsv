@@ -1,0 +1,9 @@
+source;share/thrust_plot/hook/pythonpath.ps1
+source;share/thrust_plot/hook/pythonpath.dsv
+source;share/thrust_plot/hook/pythonpath.sh
+source;share/thrust_plot/hook/ament_prefix_path.ps1
+source;share/thrust_plot/hook/ament_prefix_path.dsv
+source;share/thrust_plot/hook/ament_prefix_path.sh
+source;../../build/thrust_plot/share/thrust_plot/hook/pythonpath_develop.ps1
+source;../../build/thrust_plot/share/thrust_plot/hook/pythonpath_develop.dsv
+source;../../build/thrust_plot/share/thrust_plot/hook/pythonpath_develop.sh

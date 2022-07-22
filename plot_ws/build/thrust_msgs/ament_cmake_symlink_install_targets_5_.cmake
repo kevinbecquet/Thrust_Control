@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs/rosidl_generator_py/thrust_msgs/libthrust_msgs__python.so" "TARGETS" "thrust_msgs__python" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")

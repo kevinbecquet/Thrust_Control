@@ -36,16 +36,32 @@ private:
   ::thrust_msgs::msg::Thrust msg_;
 };
 
+class Init_Thrust_pulse
+{
+public:
+  explicit Init_Thrust_pulse(::thrust_msgs::msg::Thrust & msg)
+  : msg_(msg)
+  {}
+  Init_Thrust_mode pulse(::thrust_msgs::msg::Thrust::_pulse_type arg)
+  {
+    msg_.pulse = std::move(arg);
+    return Init_Thrust_mode(msg_);
+  }
+
+private:
+  ::thrust_msgs::msg::Thrust msg_;
+};
+
 class Init_Thrust_kff
 {
 public:
   explicit Init_Thrust_kff(::thrust_msgs::msg::Thrust & msg)
   : msg_(msg)
   {}
-  Init_Thrust_mode kff(::thrust_msgs::msg::Thrust::_kff_type arg)
+  Init_Thrust_pulse kff(::thrust_msgs::msg::Thrust::_kff_type arg)
   {
     msg_.kff = std::move(arg);
-    return Init_Thrust_mode(msg_);
+    return Init_Thrust_pulse(msg_);
   }
 
 private:
@@ -116,16 +132,48 @@ private:
   ::thrust_msgs::msg::Thrust msg_;
 };
 
-class Init_Thrust_thrust
+class Init_Thrust_thrust_comp
 {
 public:
-  explicit Init_Thrust_thrust(::thrust_msgs::msg::Thrust & msg)
+  explicit Init_Thrust_thrust_comp(::thrust_msgs::msg::Thrust & msg)
   : msg_(msg)
   {}
-  Init_Thrust_alpha thrust(::thrust_msgs::msg::Thrust::_thrust_type arg)
+  Init_Thrust_alpha thrust_comp(::thrust_msgs::msg::Thrust::_thrust_comp_type arg)
   {
-    msg_.thrust = std::move(arg);
+    msg_.thrust_comp = std::move(arg);
     return Init_Thrust_alpha(msg_);
+  }
+
+private:
+  ::thrust_msgs::msg::Thrust msg_;
+};
+
+class Init_Thrust_thrust_comm
+{
+public:
+  explicit Init_Thrust_thrust_comm(::thrust_msgs::msg::Thrust & msg)
+  : msg_(msg)
+  {}
+  Init_Thrust_thrust_comp thrust_comm(::thrust_msgs::msg::Thrust::_thrust_comm_type arg)
+  {
+    msg_.thrust_comm = std::move(arg);
+    return Init_Thrust_thrust_comp(msg_);
+  }
+
+private:
+  ::thrust_msgs::msg::Thrust msg_;
+};
+
+class Init_Thrust_thrust_meas
+{
+public:
+  explicit Init_Thrust_thrust_meas(::thrust_msgs::msg::Thrust & msg)
+  : msg_(msg)
+  {}
+  Init_Thrust_thrust_comm thrust_meas(::thrust_msgs::msg::Thrust::_thrust_meas_type arg)
+  {
+    msg_.thrust_meas = std::move(arg);
+    return Init_Thrust_thrust_comm(msg_);
   }
 
 private:
@@ -138,10 +186,10 @@ public:
   Init_Thrust_header()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  Init_Thrust_thrust header(::thrust_msgs::msg::Thrust::_header_type arg)
+  Init_Thrust_thrust_meas header(::thrust_msgs::msg::Thrust::_header_type arg)
   {
     msg_.header = std::move(arg);
-    return Init_Thrust_thrust(msg_);
+    return Init_Thrust_thrust_meas(msg_);
   }
 
 private:

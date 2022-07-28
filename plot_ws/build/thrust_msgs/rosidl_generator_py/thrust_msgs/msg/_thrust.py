@@ -58,24 +58,30 @@ class Thrust(metaclass=Metaclass_Thrust):
 
     __slots__ = [
         '_header',
-        '_thrust',
+        '_thrust_meas',
+        '_thrust_comm',
+        '_thrust_comp',
         '_alpha',
         '_kp',
         '_ki',
         '_kd',
         '_kff',
+        '_pulse',
         '_mode',
     ]
 
     _fields_and_field_types = {
         'header': 'std_msgs/Header',
-        'thrust': 'double',
+        'thrust_meas': 'double',
+        'thrust_comm': 'double',
+        'thrust_comp': 'double',
         'alpha': 'double',
         'kp': 'double',
         'ki': 'double',
         'kd': 'double',
         'kff': 'double',
-        'mode': 'uint8',
+        'pulse': 'uint16',
+        'mode': 'uint16',
     }
 
     SLOT_TYPES = (
@@ -86,7 +92,10 @@ class Thrust(metaclass=Metaclass_Thrust):
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
         rosidl_parser.definition.BasicType('double'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -95,12 +104,15 @@ class Thrust(metaclass=Metaclass_Thrust):
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         from std_msgs.msg import Header
         self.header = kwargs.get('header', Header())
-        self.thrust = kwargs.get('thrust', float())
+        self.thrust_meas = kwargs.get('thrust_meas', float())
+        self.thrust_comm = kwargs.get('thrust_comm', float())
+        self.thrust_comp = kwargs.get('thrust_comp', float())
         self.alpha = kwargs.get('alpha', float())
         self.kp = kwargs.get('kp', float())
         self.ki = kwargs.get('ki', float())
         self.kd = kwargs.get('kd', float())
         self.kff = kwargs.get('kff', float())
+        self.pulse = kwargs.get('pulse', int())
         self.mode = kwargs.get('mode', int())
 
     def __repr__(self):
@@ -134,7 +146,11 @@ class Thrust(metaclass=Metaclass_Thrust):
             return False
         if self.header != other.header:
             return False
-        if self.thrust != other.thrust:
+        if self.thrust_meas != other.thrust_meas:
+            return False
+        if self.thrust_comm != other.thrust_comm:
+            return False
+        if self.thrust_comp != other.thrust_comp:
             return False
         if self.alpha != other.alpha:
             return False
@@ -145,6 +161,8 @@ class Thrust(metaclass=Metaclass_Thrust):
         if self.kd != other.kd:
             return False
         if self.kff != other.kff:
+            return False
+        if self.pulse != other.pulse:
             return False
         if self.mode != other.mode:
             return False
@@ -170,17 +188,43 @@ class Thrust(metaclass=Metaclass_Thrust):
         self._header = value
 
     @property
-    def thrust(self):
-        """Message field 'thrust'."""
-        return self._thrust
+    def thrust_meas(self):
+        """Message field 'thrust_meas'."""
+        return self._thrust_meas
 
-    @thrust.setter
-    def thrust(self, value):
+    @thrust_meas.setter
+    def thrust_meas(self, value):
         if __debug__:
             assert \
                 isinstance(value, float), \
-                "The 'thrust' field must be of type 'float'"
-        self._thrust = value
+                "The 'thrust_meas' field must be of type 'float'"
+        self._thrust_meas = value
+
+    @property
+    def thrust_comm(self):
+        """Message field 'thrust_comm'."""
+        return self._thrust_comm
+
+    @thrust_comm.setter
+    def thrust_comm(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'thrust_comm' field must be of type 'float'"
+        self._thrust_comm = value
+
+    @property
+    def thrust_comp(self):
+        """Message field 'thrust_comp'."""
+        return self._thrust_comp
+
+    @thrust_comp.setter
+    def thrust_comp(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'thrust_comp' field must be of type 'float'"
+        self._thrust_comp = value
 
     @property
     def alpha(self):
@@ -248,6 +292,21 @@ class Thrust(metaclass=Metaclass_Thrust):
         self._kff = value
 
     @property
+    def pulse(self):
+        """Message field 'pulse'."""
+        return self._pulse
+
+    @pulse.setter
+    def pulse(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'pulse' field must be of type 'int'"
+            assert value >= 0 and value < 65536, \
+                "The 'pulse' field must be an unsigned integer in [0, 65535]"
+        self._pulse = value
+
+    @property
     def mode(self):
         """Message field 'mode'."""
         return self._mode
@@ -258,6 +317,6 @@ class Thrust(metaclass=Metaclass_Thrust):
             assert \
                 isinstance(value, int), \
                 "The 'mode' field must be of type 'int'"
-            assert value >= 0 and value < 256, \
-                "The 'mode' field must be an unsigned integer in [0, 255]"
+            assert value >= 0 and value < 65536, \
+                "The 'mode' field must be an unsigned integer in [0, 65535]"
         self._mode = value

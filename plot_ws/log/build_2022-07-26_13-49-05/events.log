@@ -1,0 +1,246 @@
+[0.000000] (-) TimerEvent: {}
+[0.000763] (thrust_msgs) JobQueued: {'identifier': 'thrust_msgs', 'dependencies': OrderedDict()}
+[0.000810] (thrust_plot) JobQueued: {'identifier': 'thrust_plot', 'dependencies': OrderedDict([('thrust_msgs', '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs')])}
+[0.001052] (thrust_msgs) JobStarted: {'identifier': 'thrust_msgs'}
+[0.018507] (thrust_msgs) JobProgress: {'identifier': 'thrust_msgs', 'progress': 'cmake'}
+[0.020403] (thrust_msgs) JobProgress: {'identifier': 'thrust_msgs', 'progress': 'build'}
+[0.020454] (thrust_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs', '--', '-j8', '-l8'], 'cwd': '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'kevin'), ('LC_TIME', 'es_ES.UTF-8'), ('SSH_AGENT_PID', '1739'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib'), ('HOME', '/home/kevin'), ('OLDPWD', '/home/kevin'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'es_ES.UTF-8'), ('MANAGERPID', '1557'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '8430'), ('MANDATORY_PATH', '/usr/share/gconf/ubuntu.mandatory.path'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/kevin/Documents/Thrust_Control/plot_ws/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'kevin'), ('JOURNAL_STREAM', '8:47517'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ubuntu.default.path'), ('USERNAME', 'kevin'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/galactic/bin:/home/kevin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/kevin-pc:@/tmp/.ICE-unix/1777,unix/kevin-pc:/tmp/.ICE-unix/1777'), ('INVOCATION_ID', 'a84a379e8a5f4460b293d8eb166b0d54'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'es_ES.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'es_ES.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '50'), ('AMENT_PREFIX_PATH', '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('LC_NAME', 'es_ES.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:0f597835-a8eb-496b-b25f-d6e49c4b9f38'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'es_ES.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'es_ES.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/python3.8/site-packages:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('LC_NUMERIC', 'es_ES.UTF-8'), ('LC_PAPER', 'es_ES.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot:/opt/ros/galactic')]), 'shell': False}
+[0.099527] (thrust_msgs) StdoutLine: {'line': b'-- Found ament_cmake: 1.1.5 (/opt/ros/galactic/share/ament_cmake/cmake)\n'}
+[0.099951] (-) TimerEvent: {}
+[0.136990] (thrust_msgs) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") \n'}
+[0.137206] (thrust_msgs) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.200054] (-) TimerEvent: {}
+[0.201529] (thrust_msgs) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.217082] (thrust_msgs) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.10.7 (/opt/ros/galactic/share/ament_lint_auto/cmake)\n'}
+[0.282926] (thrust_msgs) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.1.1 (/opt/ros/galactic/share/rosidl_default_generators/cmake)\n'}
+[0.285969] (thrust_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.290522] (thrust_msgs) StdoutLine: {'line': b'-- Found rosidl_adapter: 2.2.2 (/opt/ros/galactic/share/rosidl_adapter/cmake)\n'}
+[0.300154] (-) TimerEvent: {}
+[0.400395] (-) TimerEvent: {}
+[0.434289] (thrust_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.465188] (thrust_msgs) StdoutLine: {'line': b'-- Found std_msgs: 2.2.4 (/opt/ros/galactic/share/std_msgs/cmake)\n'}
+[0.500520] (-) TimerEvent: {}
+[0.529259] (thrust_msgs) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") \n'}
+[0.600648] (-) TimerEvent: {}
+[0.635842] (thrust_msgs) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.9.2 (/opt/ros/galactic/share/ament_cmake_ros/cmake)\n'}
+[0.700738] (-) TimerEvent: {}
+[0.801007] (-) TimerEvent: {}
+[0.810057] (thrust_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.874440] (thrust_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.901090] (-) TimerEvent: {}
+[0.903465] (thrust_msgs) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3.5") \n'}
+[0.904036] (thrust_msgs) StdoutLine: {'line': b'-- Found python_cmake_module: 0.8.1 (/opt/ros/galactic/share/python_cmake_module/cmake)\n'}
+[0.932074] (thrust_msgs) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.932268] (thrust_msgs) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8\n'}
+[0.932381] (thrust_msgs) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so\n'}
+[0.975886] (thrust_msgs) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[0.977618] (thrust_msgs) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.978623] (thrust_msgs) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.988340] (thrust_msgs) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.001172] (-) TimerEvent: {}
+[1.044460] (thrust_msgs) StdoutLine: {'line': b'-- Generating done\n'}
+[1.047742] (thrust_msgs) StdoutLine: {'line': b'-- Build files have been written to: /home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs\n'}
+[1.071141] (thrust_msgs) StdoutLine: {'line': b'[  3%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[1.081592] (thrust_msgs) StdoutLine: {'line': b'[  6%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[1.101295] (-) TimerEvent: {}
+[1.201570] (-) TimerEvent: {}
+[1.301824] (-) TimerEvent: {}
+[1.373679] (thrust_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target thrust_msgs__rosidl_generator_c\x1b[0m\n'}
+[1.378383] (thrust_msgs) StdoutLine: {'line': b'[  6%] Built target thrust_msgs__cpp\n'}
+[1.387762] (thrust_msgs) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding C object CMakeFiles/thrust_msgs__rosidl_generator_c.dir/rosidl_generator_c/thrust_msgs/msg/detail/thrust__functions.c.o\x1b[0m\n'}
+[1.389480] (thrust_msgs) StdoutLine: {'line': b'[ 19%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[1.389732] (thrust_msgs) StdoutLine: {'line': b'[ 19%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[1.389871] (thrust_msgs) StdoutLine: {'line': b'[ 19%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.401917] (-) TimerEvent: {}
+[1.502197] (-) TimerEvent: {}
+[1.552141] (thrust_msgs) StdoutLine: {'line': b'[ 22%] \x1b[32m\x1b[1mLinking C shared library libthrust_msgs__rosidl_generator_c.so\x1b[0m\n'}
+[1.602298] (-) TimerEvent: {}
+[1.602778] (thrust_msgs) StdoutLine: {'line': b'[ 22%] Built target thrust_msgs__rosidl_generator_c\n'}
+[1.614300] (thrust_msgs) StdoutLine: {'line': b'[ 25%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[1.618804] (thrust_msgs) StdoutLine: {'line': b'[ 29%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.695137] (thrust_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target thrust_msgs__rosidl_typesupport_cpp\x1b[0m\n'}
+[1.702417] (-) TimerEvent: {}
+[1.712018] (thrust_msgs) StdoutLine: {'line': b'[ 32%] \x1b[32mBuilding CXX object CMakeFiles/thrust_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/thrust_msgs/msg/thrust__type_support.cpp.o\x1b[0m\n'}
+[1.714506] (thrust_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target thrust_msgs__rosidl_typesupport_introspection_cpp\x1b[0m\n'}
+[1.731498] (thrust_msgs) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/thrust_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/thrust_msgs/msg/detail/thrust__type_support.cpp.o\x1b[0m\n'}
+[1.739128] (thrust_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target thrust_msgs__rosidl_typesupport_fastrtps_cpp\x1b[0m\n'}
+[1.753989] (thrust_msgs) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/thrust_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/thrust_msgs/msg/detail/dds_fastrtps/thrust__type_support.cpp.o\x1b[0m\n'}
+[1.802504] (-) TimerEvent: {}
+[1.902842] (-) TimerEvent: {}
+[1.998147] (thrust_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target thrust_msgs__rosidl_typesupport_c\x1b[0m\n'}
+[2.002943] (-) TimerEvent: {}
+[2.011449] (thrust_msgs) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/thrust_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/thrust_msgs/msg/thrust__type_support.cpp.o\x1b[0m\n'}
+[2.058543] (thrust_msgs) StdoutLine: {'line': b'[ 45%] \x1b[32m\x1b[1mLinking CXX shared library libthrust_msgs__rosidl_typesupport_c.so\x1b[0m\n'}
+[2.103057] (-) TimerEvent: {}
+[2.108592] (thrust_msgs) StdoutLine: {'line': b'[ 45%] Built target thrust_msgs__rosidl_typesupport_c\n'}
+[2.111168] (thrust_msgs) StdoutLine: {'line': b'[ 48%] \x1b[32m\x1b[1mLinking CXX shared library libthrust_msgs__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[2.161142] (thrust_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target thrust_msgs__rosidl_typesupport_introspection_c\x1b[0m\n'}
+[2.162852] (thrust_msgs) StdoutLine: {'line': b'[ 48%] Built target thrust_msgs__rosidl_typesupport_cpp\n'}
+[2.175563] (thrust_msgs) StdoutLine: {'line': b'[ 51%] \x1b[32mBuilding C object CMakeFiles/thrust_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/thrust_msgs/msg/detail/thrust__type_support.c.o\x1b[0m\n'}
+[2.203167] (-) TimerEvent: {}
+[2.211783] (thrust_msgs) StdoutLine: {'line': b'[ 54%] \x1b[32m\x1b[1mLinking C shared library libthrust_msgs__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[2.229322] (thrust_msgs) StdoutLine: {'line': b'[ 58%] \x1b[32m\x1b[1mLinking CXX shared library libthrust_msgs__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[2.245539] (thrust_msgs) StdoutLine: {'line': b'[ 58%] Built target thrust_msgs__rosidl_typesupport_introspection_c\n'}
+[2.262857] (thrust_msgs) StdoutLine: {'line': b'[ 61%] \x1b[32m\x1b[1mLinking CXX shared library libthrust_msgs__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[2.303286] (-) TimerEvent: {}
+[2.303706] (thrust_msgs) StdoutLine: {'line': b'[ 61%] Built target thrust_msgs__rosidl_typesupport_introspection_cpp\n'}
+[2.392708] (thrust_msgs) StdoutLine: {'line': b'[ 61%] Built target thrust_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[2.403406] (-) TimerEvent: {}
+[2.406096] (thrust_msgs) StdoutLine: {'line': b'[ 64%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[2.503517] (-) TimerEvent: {}
+[2.603778] (-) TimerEvent: {}
+[2.691071] (thrust_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target thrust_msgs__rosidl_typesupport_fastrtps_c\x1b[0m\n'}
+[2.703916] (-) TimerEvent: {}
+[2.704483] (thrust_msgs) StdoutLine: {'line': b'[ 67%] \x1b[32mBuilding CXX object CMakeFiles/thrust_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/thrust_msgs/msg/detail/thrust__type_support_c.cpp.o\x1b[0m\n'}
+[2.804042] (-) TimerEvent: {}
+[2.904338] (-) TimerEvent: {}
+[3.004632] (-) TimerEvent: {}
+[3.035220] (thrust_msgs) StdoutLine: {'line': b'[ 70%] \x1b[32m\x1b[1mLinking CXX shared library libthrust_msgs__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[3.104767] (-) TimerEvent: {}
+[3.134160] (thrust_msgs) StdoutLine: {'line': b'[ 70%] Built target thrust_msgs__rosidl_typesupport_fastrtps_c\n'}
+[3.158186] (thrust_msgs) StdoutLine: {'line': b'[ 70%] Built target thrust_msgs\n'}
+[3.182079] (thrust_msgs) StdoutLine: {'line': b'[ 74%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[3.204885] (-) TimerEvent: {}
+[3.305169] (-) TimerEvent: {}
+[3.405430] (-) TimerEvent: {}
+[3.505701] (-) TimerEvent: {}
+[3.605973] (-) TimerEvent: {}
+[3.706233] (thrust_msgs) StdoutLine: {'line': b'[ 74%] Built target thrust_msgs__py\n'}
+[3.706465] (-) TimerEvent: {}
+[3.718265] (thrust_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target thrust_msgs__python\x1b[0m\n'}
+[3.733563] (thrust_msgs) StdoutLine: {'line': b'[ 77%] \x1b[32mBuilding C object CMakeFiles/thrust_msgs__python.dir/rosidl_generator_py/thrust_msgs/msg/_thrust_s.c.o\x1b[0m\n'}
+[3.806600] (-) TimerEvent: {}
+[3.843937] (thrust_msgs) StdoutLine: {'line': b'[ 80%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/thrust_msgs/libthrust_msgs__python.so\x1b[0m\n'}
+[3.885918] (thrust_msgs) StdoutLine: {'line': b'[ 80%] Built target thrust_msgs__python\n'}
+[3.896719] (thrust_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target thrust_msgs__rosidl_typesupport_c__pyext\x1b[0m\n'}
+[3.896974] (thrust_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target thrust_msgs__rosidl_typesupport_introspection_c__pyext\x1b[0m\n'}
+[3.897126] (thrust_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target thrust_msgs__rosidl_typesupport_fastrtps_c__pyext\x1b[0m\n'}
+[3.906713] (-) TimerEvent: {}
+[3.911973] (thrust_msgs) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding C object CMakeFiles/thrust_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/thrust_msgs/_thrust_msgs_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[3.913401] (thrust_msgs) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/thrust_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/thrust_msgs/_thrust_msgs_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[3.916617] (thrust_msgs) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/thrust_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/thrust_msgs/_thrust_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[3.991538] (thrust_msgs) StdoutLine: {'line': b'[ 93%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/thrust_msgs/thrust_msgs_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so\x1b[0m\n'}
+[3.991849] (thrust_msgs) StdoutLine: {'line': b'[ 96%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/thrust_msgs/thrust_msgs_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so\x1b[0m\n'}
+[3.996631] (thrust_msgs) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX shared library rosidl_generator_py/thrust_msgs/thrust_msgs_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so\x1b[0m\n'}
+[4.006837] (-) TimerEvent: {}
+[4.029634] (thrust_msgs) StdoutLine: {'line': b'[100%] Built target thrust_msgs__rosidl_typesupport_c__pyext\n'}
+[4.029851] (thrust_msgs) StdoutLine: {'line': b'[100%] Built target thrust_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[4.065596] (thrust_msgs) StdoutLine: {'line': b'[100%] Built target thrust_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[4.076554] (thrust_msgs) CommandEnded: {'returncode': 0}
+[4.106968] (-) TimerEvent: {}
+[4.121819] (thrust_msgs) JobProgress: {'identifier': 'thrust_msgs', 'progress': 'install'}
+[4.133636] (thrust_msgs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs'], 'cwd': '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'kevin'), ('LC_TIME', 'es_ES.UTF-8'), ('SSH_AGENT_PID', '1739'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib'), ('HOME', '/home/kevin'), ('OLDPWD', '/home/kevin'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'es_ES.UTF-8'), ('MANAGERPID', '1557'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '8430'), ('MANDATORY_PATH', '/usr/share/gconf/ubuntu.mandatory.path'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/kevin/Documents/Thrust_Control/plot_ws/install'), ('ROS_DISTRO', 'galactic'), ('LOGNAME', 'kevin'), ('JOURNAL_STREAM', '8:47517'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ubuntu.default.path'), ('USERNAME', 'kevin'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/galactic/bin:/home/kevin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/kevin-pc:@/tmp/.ICE-unix/1777,unix/kevin-pc:/tmp/.ICE-unix/1777'), ('INVOCATION_ID', 'a84a379e8a5f4460b293d8eb166b0d54'), ('PAPERSIZE', 'a4'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'es_ES.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'es_ES.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '50'), ('AMENT_PREFIX_PATH', '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs:/opt/ros/galactic'), ('SHELL', '/bin/bash'), ('LC_NAME', 'es_ES.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:0f597835-a8eb-496b-b25f-d6e49c4b9f38'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'es_ES.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'es_ES.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/python3.8/site-packages:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages'), ('LC_NUMERIC', 'es_ES.UTF-8'), ('LC_PAPER', 'es_ES.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot:/opt/ros/galactic')]), 'shell': False}
+[4.142351] (thrust_msgs) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[4.142915] (thrust_msgs) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[4.143274] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/ament_index/resource_index/rosidl_interfaces/thrust_msgs\n'}
+[4.146124] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/include/thrust_msgs/msg/detail/thrust__functions.h\n'}
+[4.147285] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/include/thrust_msgs/msg/detail/thrust__struct.h\n'}
+[4.148401] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/include/thrust_msgs/msg/detail/thrust__type_support.h\n'}
+[4.149565] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/include/thrust_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[4.150672] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/include/thrust_msgs/msg/thrust.h\n'}
+[4.152270] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/environment/library_path.sh\n'}
+[4.153710] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/environment/library_path.dsv\n'}
+[4.156566] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/include/thrust_msgs/msg/detail/thrust__rosidl_typesupport_fastrtps_c.h\n'}
+[4.157712] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/include/thrust_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[4.159841] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/libthrust_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[4.162822] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/include/thrust_msgs/msg/detail/thrust__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[4.163986] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/include/thrust_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[4.166156] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/libthrust_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[4.169121] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/include/thrust_msgs/msg/detail/thrust__rosidl_typesupport_introspection_c.h\n'}
+[4.170229] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/include/thrust_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[4.172795] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/include/thrust_msgs/msg/detail/thrust__builder.hpp\n'}
+[4.173941] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/include/thrust_msgs/msg/detail/thrust__struct.hpp\n'}
+[4.174956] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/include/thrust_msgs/msg/detail/thrust__traits.hpp\n'}
+[4.176079] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/include/thrust_msgs/msg/thrust.hpp\n'}
+[4.178801] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/include/thrust_msgs/msg/detail/thrust__rosidl_typesupport_introspection_cpp.hpp\n'}
+[4.180052] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/environment/pythonpath.sh\n'}
+[4.180825] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/environment/pythonpath.dsv\n'}
+[4.181640] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/python3.8/site-packages/thrust_msgs/__init__.py\n'}
+[4.182933] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/python3.8/site-packages/thrust_msgs/msg/__init__.py\n'}
+[4.183411] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/python3.8/site-packages/thrust_msgs/msg/_thrust.py\n'}
+[4.184815] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/python3.8/site-packages/thrust_msgs/thrust_msgs_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so\n'}
+[4.185846] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/python3.8/site-packages/thrust_msgs/thrust_msgs_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so\n'}
+[4.186763] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/python3.8/site-packages/thrust_msgs/thrust_msgs_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so\n'}
+[4.187615] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/libthrust_msgs__python.so\n'}
+[4.188233] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/msg/Thrust.idl\n'}
+[4.188806] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/msg/Thrust.msg\n'}
+[4.189487] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/ament_index/resource_index/package_run_dependencies/thrust_msgs\n'}
+[4.190127] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/ament_index/resource_index/parent_prefix_path/thrust_msgs\n'}
+[4.190731] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/environment/ament_prefix_path.sh\n'}
+[4.190984] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/environment/ament_prefix_path.dsv\n'}
+[4.191369] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/environment/path.sh\n'}
+[4.191639] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/environment/path.dsv\n'}
+[4.191905] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/local_setup.bash\n'}
+[4.192169] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/local_setup.sh\n'}
+[4.192429] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/local_setup.zsh\n'}
+[4.192690] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/local_setup.dsv\n'}
+[4.192859] (thrust_msgs) StdoutLine: {'line': b'-- Symlinking: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/package.dsv\n'}
+[4.201761] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/ament_index/resource_index/packages/thrust_msgs\n'}
+[4.202198] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[4.202658] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[4.203103] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[4.203548] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[4.203962] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[4.204395] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[4.204828] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[4.205323] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/cmake/thrust_msgsConfig.cmake\n'}
+[4.205657] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/cmake/thrust_msgsConfig-version.cmake\n'}
+[4.205972] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date symlink: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/package.xml\n'}
+[4.206282] (thrust_msgs) StdoutLine: {'line': b'-- Installing: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/libthrust_msgs__rosidl_generator_c.so\n'}
+[4.206731] (thrust_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/libthrust_msgs__rosidl_generator_c.so" to ""\n'}
+[4.206956] (thrust_msgs) StdoutLine: {'line': b'-- Installing: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/libthrust_msgs__rosidl_typesupport_introspection_c.so\n'}
+[4.207034] (-) TimerEvent: {}
+[4.207442] (thrust_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/libthrust_msgs__rosidl_typesupport_introspection_c.so" to ""\n'}
+[4.207677] (thrust_msgs) StdoutLine: {'line': b'-- Installing: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/libthrust_msgs__rosidl_typesupport_c.so\n'}
+[4.208095] (thrust_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/libthrust_msgs__rosidl_typesupport_c.so" to ""\n'}
+[4.208374] (thrust_msgs) StdoutLine: {'line': b'-- Installing: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/libthrust_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[4.208854] (thrust_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/libthrust_msgs__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[4.209138] (thrust_msgs) StdoutLine: {'line': b'-- Installing: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/libthrust_msgs__rosidl_typesupport_cpp.so\n'}
+[4.209546] (thrust_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/libthrust_msgs__rosidl_typesupport_cpp.so" to ""\n'}
+[4.240850] (thrust_msgs) StdoutLine: {'line': b"Compiling '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/python3.8/site-packages/thrust_msgs/__init__.py'...\n"}
+[4.244955] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/cmake/thrust_msgs__rosidl_generator_cExport.cmake\n'}
+[4.245147] (thrust_msgs) StdoutLine: {'line': b'-- Installing: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/cmake/thrust_msgs__rosidl_generator_cExport-noconfig.cmake\n'}
+[4.245361] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/cmake/thrust_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[4.245496] (thrust_msgs) StdoutLine: {'line': b'-- Installing: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/cmake/thrust_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[4.245751] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/cmake/thrust_msgs__rosidl_typesupport_cExport.cmake\n'}
+[4.245886] (thrust_msgs) StdoutLine: {'line': b'-- Installing: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/cmake/thrust_msgs__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[4.246148] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/cmake/thrust_msgs__rosidl_generator_cppExport.cmake\n'}
+[4.246357] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/cmake/thrust_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[4.246490] (thrust_msgs) StdoutLine: {'line': b'-- Installing: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/cmake/thrust_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[4.246702] (thrust_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/cmake/thrust_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[4.246822] (thrust_msgs) StdoutLine: {'line': b'-- Installing: /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/share/thrust_msgs/cmake/thrust_msgs__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[4.248989] (thrust_msgs) CommandEnded: {'returncode': 0}
+[4.307268] (-) TimerEvent: {}
+[4.352834] (thrust_msgs) JobEnded: {'identifier': 'thrust_msgs', 'rc': 0}
+[4.355850] (thrust_plot) JobStarted: {'identifier': 'thrust_plot'}
+[4.407450] (-) TimerEvent: {}
+[4.507856] (-) TimerEvent: {}
+[4.608159] (-) TimerEvent: {}
+[4.708647] (-) TimerEvent: {}
+[4.809008] (-) TimerEvent: {}
+[4.909291] (-) TimerEvent: {}
+[5.009581] (-) TimerEvent: {}
+[5.041293] (thrust_plot) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'develop', '--prefix', '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot', '--editable', '--build-directory', '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot/build', '--no-deps', 'install_data', '--install-dir', '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot'], 'cwd': '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_US:en', 'USER': 'kevin', 'LC_TIME': 'es_ES.UTF-8', 'SSH_AGENT_PID': '1739', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib:/opt/ros/galactic/opt/yaml_cpp_vendor/lib:/opt/ros/galactic/opt/rviz_ogre_vendor/lib:/opt/ros/galactic/lib/x86_64-linux-gnu:/opt/ros/galactic/lib', 'HOME': '/home/kevin', 'OLDPWD': '/home/kevin', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'es_ES.UTF-8', 'MANAGERPID': '1557', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '8430', 'MANDATORY_PATH': '/usr/share/gconf/ubuntu.mandatory.path', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/kevin/Documents/Thrust_Control/plot_ws/install', 'ROS_DISTRO': 'galactic', 'LOGNAME': 'kevin', 'JOURNAL_STREAM': '8:47517', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'DEFAULTS_PATH': '/usr/share/gconf/ubuntu.default.path', 'USERNAME': 'kevin', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/opt/ros/galactic/bin:/home/kevin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/kevin-pc:@/tmp/.ICE-unix/1777,unix/kevin-pc:/tmp/.ICE-unix/1777', 'INVOCATION_ID': 'a84a379e8a5f4460b293d8eb166b0d54', 'PAPERSIZE': 'a4', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'es_ES.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'es_ES.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '50', 'AMENT_PREFIX_PATH': '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs:/opt/ros/galactic', 'SHELL': '/bin/bash', 'LC_NAME': 'es_ES.UTF-8', 'TERMINATOR_UUID': 'urn:uuid:0f597835-a8eb-496b-b25f-d6e49c4b9f38', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'es_ES.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'LC_IDENTIFICATION': 'es_ES.UTF-8', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/python3.8/site-packages:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/python3.8/site-packages:/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages', 'LC_NUMERIC': 'es_ES.UTF-8', 'LC_PAPER': 'es_ES.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6003', 'CMAKE_PREFIX_PATH': '/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs'}, 'shell': False}
+[5.109704] (-) TimerEvent: {}
+[5.210004] (-) TimerEvent: {}
+[5.275490] (thrust_plot) StdoutLine: {'line': b'running develop\n'}
+[5.310117] (-) TimerEvent: {}
+[5.410370] (-) TimerEvent: {}
+[5.420685] (thrust_plot) StdoutLine: {'line': b'running egg_info\n'}
+[5.420879] (thrust_plot) StdoutLine: {'line': b'writing thrust_plot.egg-info/PKG-INFO\n'}
+[5.421013] (thrust_plot) StdoutLine: {'line': b'writing dependency_links to thrust_plot.egg-info/dependency_links.txt\n'}
+[5.421204] (thrust_plot) StdoutLine: {'line': b'writing entry points to thrust_plot.egg-info/entry_points.txt\n'}
+[5.421369] (thrust_plot) StdoutLine: {'line': b'writing requirements to thrust_plot.egg-info/requires.txt\n'}
+[5.421454] (thrust_plot) StdoutLine: {'line': b'writing top-level names to thrust_plot.egg-info/top_level.txt\n'}
+[5.452848] (thrust_plot) StdoutLine: {'line': b"reading manifest file 'thrust_plot.egg-info/SOURCES.txt'\n"}
+[5.453465] (thrust_plot) StdoutLine: {'line': b"writing manifest file 'thrust_plot.egg-info/SOURCES.txt'\n"}
+[5.485638] (thrust_plot) StdoutLine: {'line': b'running build_ext\n'}
+[5.486266] (thrust_plot) StdoutLine: {'line': b'Creating /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/python3.8/site-packages/thrust-plot.egg-link (link to .)\n'}
+[5.487003] (thrust_plot) StdoutLine: {'line': b'Installing thrust_plot script to /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/thrust_plot\n'}
+[5.487231] (thrust_plot) StdoutLine: {'line': b'\n'}
+[5.487335] (thrust_plot) StdoutLine: {'line': b'Installed /home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot\n'}
+[5.487408] (thrust_plot) StdoutLine: {'line': b'running install_data\n'}
+[5.510510] (-) TimerEvent: {}
+[5.517329] (thrust_plot) CommandEnded: {'returncode': 0}
+[5.533972] (thrust_plot) JobEnded: {'identifier': 'thrust_plot', 'rc': 0}
+[5.534412] (-) EventReactorShutdown: {}

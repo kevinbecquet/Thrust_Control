@@ -65,13 +65,31 @@ bool thrust_msgs__msg__thrust__convert_from_py(PyObject * _pymsg, void * _ros_me
     }
     Py_DECREF(field);
   }
-  {  // thrust
-    PyObject * field = PyObject_GetAttrString(_pymsg, "thrust");
+  {  // thrust_meas
+    PyObject * field = PyObject_GetAttrString(_pymsg, "thrust_meas");
     if (!field) {
       return false;
     }
     assert(PyFloat_Check(field));
-    ros_message->thrust = PyFloat_AS_DOUBLE(field);
+    ros_message->thrust_meas = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // thrust_comm
+    PyObject * field = PyObject_GetAttrString(_pymsg, "thrust_comm");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->thrust_comm = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // thrust_comp
+    PyObject * field = PyObject_GetAttrString(_pymsg, "thrust_comp");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->thrust_comp = PyFloat_AS_DOUBLE(field);
     Py_DECREF(field);
   }
   {  // alpha
@@ -119,13 +137,22 @@ bool thrust_msgs__msg__thrust__convert_from_py(PyObject * _pymsg, void * _ros_me
     ros_message->kff = PyFloat_AS_DOUBLE(field);
     Py_DECREF(field);
   }
+  {  // pulse
+    PyObject * field = PyObject_GetAttrString(_pymsg, "pulse");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->pulse = (uint16_t)PyLong_AsUnsignedLong(field);
+    Py_DECREF(field);
+  }
   {  // mode
     PyObject * field = PyObject_GetAttrString(_pymsg, "mode");
     if (!field) {
       return false;
     }
     assert(PyLong_Check(field));
-    ros_message->mode = (uint8_t)PyLong_AsUnsignedLong(field);
+    ros_message->mode = (uint16_t)PyLong_AsUnsignedLong(field);
     Py_DECREF(field);
   }
 
@@ -164,11 +191,33 @@ PyObject * thrust_msgs__msg__thrust__convert_to_py(void * raw_ros_message)
       }
     }
   }
-  {  // thrust
+  {  // thrust_meas
     PyObject * field = NULL;
-    field = PyFloat_FromDouble(ros_message->thrust);
+    field = PyFloat_FromDouble(ros_message->thrust_meas);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "thrust", field);
+      int rc = PyObject_SetAttrString(_pymessage, "thrust_meas", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // thrust_comm
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->thrust_comm);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "thrust_comm", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // thrust_comp
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->thrust_comp);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "thrust_comp", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;
@@ -224,6 +273,17 @@ PyObject * thrust_msgs__msg__thrust__convert_to_py(void * raw_ros_message)
     field = PyFloat_FromDouble(ros_message->kff);
     {
       int rc = PyObject_SetAttrString(_pymessage, "kff", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // pulse
+    PyObject * field = NULL;
+    field = PyLong_FromUnsignedLong(ros_message->pulse);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "pulse", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

@@ -1,6 +1,0 @@
-ros2 topic pub /thrust_command thrust_msgs/msg/Thrust header:
-  stamp: 0
-    sec: 0c: 0
-    nanosec: 0
-  frame_id: ''
-thrust: 0.0 -1

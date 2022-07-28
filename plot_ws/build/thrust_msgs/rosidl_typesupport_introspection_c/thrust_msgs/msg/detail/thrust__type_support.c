@@ -37,7 +37,7 @@ void Thrust__rosidl_typesupport_introspection_c__Thrust_fini_function(void * mes
   thrust_msgs__msg__Thrust__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember Thrust__rosidl_typesupport_introspection_c__Thrust_message_member_array[8] = {
+static rosidl_typesupport_introspection_c__MessageMember Thrust__rosidl_typesupport_introspection_c__Thrust_message_member_array[11] = {
   {
     "header",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_MESSAGE,  // type
@@ -54,14 +54,44 @@ static rosidl_typesupport_introspection_c__MessageMember Thrust__rosidl_typesupp
     NULL  // resize(index) function pointer
   },
   {
-    "thrust",  // name
+    "thrust_meas",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(thrust_msgs__msg__Thrust, thrust),  // bytes offset in struct
+    offsetof(thrust_msgs__msg__Thrust, thrust_meas),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "thrust_comm",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(thrust_msgs__msg__Thrust, thrust_comm),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "thrust_comp",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(thrust_msgs__msg__Thrust, thrust_comp),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -144,8 +174,23 @@ static rosidl_typesupport_introspection_c__MessageMember Thrust__rosidl_typesupp
     NULL  // resize(index) function pointer
   },
   {
+    "pulse",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT16,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(thrust_msgs__msg__Thrust, pulse),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
     "mode",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT16,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
@@ -163,7 +208,7 @@ static rosidl_typesupport_introspection_c__MessageMember Thrust__rosidl_typesupp
 static const rosidl_typesupport_introspection_c__MessageMembers Thrust__rosidl_typesupport_introspection_c__Thrust_message_members = {
   "thrust_msgs__msg",  // message namespace
   "Thrust",  // message name
-  8,  // number of fields
+  11,  // number of fields
   sizeof(thrust_msgs__msg__Thrust),
   Thrust__rosidl_typesupport_introspection_c__Thrust_message_member_array,  // message members
   Thrust__rosidl_typesupport_introspection_c__Thrust_init_function,  // function to initialize message memory (memory has to be allocated)

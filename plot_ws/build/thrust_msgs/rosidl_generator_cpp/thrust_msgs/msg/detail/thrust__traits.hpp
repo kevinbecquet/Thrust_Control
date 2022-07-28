@@ -32,13 +32,33 @@ inline void to_yaml(
     to_yaml(msg.header, out, indentation + 2);
   }
 
-  // member: thrust
+  // member: thrust_meas
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "thrust: ";
-    value_to_yaml(msg.thrust, out);
+    out << "thrust_meas: ";
+    value_to_yaml(msg.thrust_meas, out);
+    out << "\n";
+  }
+
+  // member: thrust_comm
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "thrust_comm: ";
+    value_to_yaml(msg.thrust_comm, out);
+    out << "\n";
+  }
+
+  // member: thrust_comp
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "thrust_comp: ";
+    value_to_yaml(msg.thrust_comp, out);
     out << "\n";
   }
 
@@ -89,6 +109,16 @@ inline void to_yaml(
     }
     out << "kff: ";
     value_to_yaml(msg.kff, out);
+    out << "\n";
+  }
+
+  // member: pulse
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "pulse: ";
+    value_to_yaml(msg.pulse, out);
     out << "\n";
   }
 

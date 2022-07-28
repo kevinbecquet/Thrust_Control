@@ -54,12 +54,13 @@ int count = 0;
 void setup() {
   
   Serial.begin(9600);
+  Serial.setTimeout(20);
 
   //Timer setting
-  Timer.stop();
-  Timer.setPeriod(PERIOD);
-  Timer.attachInterrupt(interrupt);
-  Timer.start();
+//  Timer.stop();
+//  Timer.setPeriod(PERIOD);
+//  Timer.attachInterrupt(interrupt);
+//  Timer.start();
   
   pinMode(sensorPin,INPUT);
   pinMode(escPin,OUTPUT);
@@ -72,56 +73,16 @@ void setup() {
 }
 
 void loop(){
-//  if(Serial.available()){
-//    String reading = Serial.readString();
-//    pulse  =reading.toInt(); 
-//    command(pulse);
-//    
-//   
-//  }
+  if(Serial.available()){
+    String reading = Serial.readString();
+    pulse  =reading.toInt(); 
+    command(pulse);
+//    Serial.printf("between %d & %d: %d\n",MIN_PULSE_LENGTH,MAX_PULSE_LENGTH,pulse);
+  }
+  int value = average(500000,1);
+  Serial.printf("value at %d pulse: %d\n",pulse, value);
 }
 
-
-void interrupt(){
-//  long timer = micros();  
-  count++;
-  if (Serial.available()){
-    ok = true;
-    yc = setForceCommand();
-    if (yc <= 0) {
-      pulse = MIN_PULSE_LENGTH;
-      ok = false;    
-      command(pulse);
-    } 
-  }
-    
-  y = getForce();
-  y = vibrationFilter(0.01);
- 
-  if(ok){
-    
-    double u = control(yc,y);    
-    pulse = force2PWM(u);    
-    command(pulse);  
-  }
-
-//  Serial.print(" Time : ");
-//  Serial.print(timer - timing);
-//
-//  Serial.print(count);
-//  Serial.print(",");
-//  Serial.print(y,4);
-//
-//  Serial.print(",");
-//  Serial.print(pulse);
-//Serial.print("\t");
-//Serial.print(micros()-timer);
-//  Serial.println();
-
-  Serial.printf("%d,%f\n",count,y);
-  
-//      timing =timer;
-}
 
 /*
  * linear mapping of a value : map(25,0,50,0,100) -> 50 
@@ -283,6 +244,7 @@ void command(double pulse) {
   // if pulse isn't coherent value the motor stops
   if (pulse < MIN_PULSE_LENGTH   || pulse > MAX_PULSE_LENGTH  ) {
    drv_pwm_set_duty_mod(escPin,PWM_RES,MIN_PULSE_LENGTH);
+   Serial.println("stopped");
   }
   else {
      drv_pwm_set_duty_mod(escPin,PWM_RES,pulse);

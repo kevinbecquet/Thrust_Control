@@ -25,14 +25,15 @@ class ThrustPlot(Node):
 
 
         self.ser_ = serial.Serial()
-        self.ser_.port = '/dev/ttyACM0' #Arduino serial port
+        self.ser_.port = '/dev/ttyACM0' # serial port
         self.ser_.baudrate = 9600
-        self.ser_.timeout = 10 #specify timeout when using readline()
+        self.ser_.timeout = 10 # specify timeout when using readline()
         self.ser_.open()
 
     def listener_callback(self,msg):
         
-        config_msg = ",".join([str(msg.thrust),
+        config_msg = ",".join([str(msg.mode),
+                            str(msg.thrust_comm),
                             str(msg.alpha),
                             str(msg.kp),
                             str(msg.ki),
@@ -44,15 +45,25 @@ class ThrustPlot(Node):
         
 
     def timer_callback(self): 
-        self.ser_.readline() #read the first line (very likely to be incomplete thus unusable)
+        
 
         if(self.ser_.inWaiting()>0):
-            line=self.ser_.readline().decode('utf-8')
+            self.ser_.readline() # reads the first line (very likely to be incomplete thus unusable)
+            line=self.ser_.readline().decode()
             line_as_list = line.split(',')      
             msg = Thrust()
-            #msg.thrust = float(line_as_list[1])
-            msg.thrust = float(line)
+            
+            msg.thrust_meas = float(line_as_list[0])
+            msg.thrust_comm = float(line_as_list[1])
+            msg.thrust_comp = float(line_as_list[2])
+            msg.kp = float(line_as_list[3])
+            msg.ki = float(line_as_list[4])
+            msg.kd = float(line_as_list[5])
+            msg.kff = float(line_as_list[6])
+            msg.pulse = int(line_as_list[7])
+
             self.publisher_.publish(msg)
+            
        
 
 def main(args=None):
@@ -62,9 +73,6 @@ def main(args=None):
 
     rclpy.spin(thrust_plot)
 
-    # Destroy the node explicitly
-    # (optional - otherwise it will be done automatically
-    # when the garbage collector destroys the node object)
     thrust_plot.destroy_node()
     rclpy.shutdown()
 

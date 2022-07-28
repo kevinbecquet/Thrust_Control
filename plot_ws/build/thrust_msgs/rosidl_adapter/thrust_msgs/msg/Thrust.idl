@@ -9,8 +9,20 @@ module thrust_msgs {
     struct Thrust {
       std_msgs::msg::Header header;
 
+      @verbatim (language="comment", text=
+        " thrust measurement")
       @unit (value="N")
-      double thrust;
+      double thrust_meas;
+
+      @verbatim (language="comment", text=
+        " thrust command sent to the system")
+      @unit (value="N")
+      double thrust_comm;
+
+      @verbatim (language="comment", text=
+        " controller's output thrust")
+      @unit (value="N")
+      double thrust_comp;
 
       @verbatim (language="comment", text=
         " lowpass filter coef between 0 and 1")
@@ -29,12 +41,19 @@ module thrust_msgs {
       double kd;
 
       @verbatim (language="comment", text=
-        " fast forward  coef of the controller")
+        " feedforward  coef of the controller")
       double kff;
 
       @verbatim (language="comment", text=
-        " 0 if the message is just a thrust command 1 if it's a whole configuration")
-      uint8 mode;
+        " 10 bits encoded PWM sent to the ESC")
+      uint16 pulse;
+
+      @verbatim (language="comment", text=
+        " 0 to send just a thrust command," "\n"
+        " 1 to send a controller configuration w/out a command" "\n"
+        " 2 to disable the controller and stop the motor" "\n"
+        " 3 to tare the sensor")
+      uint16 mode;
     };
   };
 };

@@ -77,9 +77,19 @@ static bool _Thrust__cdr_serialize(
     }
   }
 
-  // Field name: thrust
+  // Field name: thrust_meas
   {
-    cdr << ros_message->thrust;
+    cdr << ros_message->thrust_meas;
+  }
+
+  // Field name: thrust_comm
+  {
+    cdr << ros_message->thrust_comm;
+  }
+
+  // Field name: thrust_comp
+  {
+    cdr << ros_message->thrust_comp;
   }
 
   // Field name: alpha
@@ -105,6 +115,11 @@ static bool _Thrust__cdr_serialize(
   // Field name: kff
   {
     cdr << ros_message->kff;
+  }
+
+  // Field name: pulse
+  {
+    cdr << ros_message->pulse;
   }
 
   // Field name: mode
@@ -138,9 +153,19 @@ static bool _Thrust__cdr_deserialize(
     }
   }
 
-  // Field name: thrust
+  // Field name: thrust_meas
   {
-    cdr >> ros_message->thrust;
+    cdr >> ros_message->thrust_meas;
+  }
+
+  // Field name: thrust_comm
+  {
+    cdr >> ros_message->thrust_comm;
+  }
+
+  // Field name: thrust_comp
+  {
+    cdr >> ros_message->thrust_comp;
   }
 
   // Field name: alpha
@@ -166,6 +191,11 @@ static bool _Thrust__cdr_deserialize(
   // Field name: kff
   {
     cdr >> ros_message->kff;
+  }
+
+  // Field name: pulse
+  {
+    cdr >> ros_message->pulse;
   }
 
   // Field name: mode
@@ -194,9 +224,21 @@ size_t get_serialized_size_thrust_msgs__msg__Thrust(
 
   current_alignment += get_serialized_size_std_msgs__msg__Header(
     &(ros_message->header), current_alignment);
-  // field.name thrust
+  // field.name thrust_meas
   {
-    size_t item_size = sizeof(ros_message->thrust);
+    size_t item_size = sizeof(ros_message->thrust_meas);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name thrust_comm
+  {
+    size_t item_size = sizeof(ros_message->thrust_comm);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name thrust_comp
+  {
+    size_t item_size = sizeof(ros_message->thrust_comp);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -227,6 +269,12 @@ size_t get_serialized_size_thrust_msgs__msg__Thrust(
   // field.name kff
   {
     size_t item_size = sizeof(ros_message->kff);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name pulse
+  {
+    size_t item_size = sizeof(ros_message->pulse);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -271,7 +319,21 @@ size_t max_serialized_size_thrust_msgs__msg__Thrust(
         full_bounded, current_alignment);
     }
   }
-  // member: thrust
+  // member: thrust_meas
+  {
+    size_t array_size = 1;
+
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: thrust_comm
+  {
+    size_t array_size = 1;
+
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+  // member: thrust_comp
   {
     size_t array_size = 1;
 
@@ -313,11 +375,19 @@ size_t max_serialized_size_thrust_msgs__msg__Thrust(
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
+  // member: pulse
+  {
+    size_t array_size = 1;
+
+    current_alignment += array_size * sizeof(uint16_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
+  }
   // member: mode
   {
     size_t array_size = 1;
 
-    current_alignment += array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint16_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
   }
 
   return current_alignment - initial_alignment;

@@ -24,12 +24,15 @@ thrust_msgs__msg__Thrust__init(thrust_msgs__msg__Thrust * msg)
     thrust_msgs__msg__Thrust__fini(msg);
     return false;
   }
-  // thrust
+  // thrust_meas
+  // thrust_comm
+  // thrust_comp
   // alpha
   // kp
   // ki
   // kd
   // kff
+  // pulse
   // mode
   return true;
 }
@@ -42,12 +45,15 @@ thrust_msgs__msg__Thrust__fini(thrust_msgs__msg__Thrust * msg)
   }
   // header
   std_msgs__msg__Header__fini(&msg->header);
-  // thrust
+  // thrust_meas
+  // thrust_comm
+  // thrust_comp
   // alpha
   // kp
   // ki
   // kd
   // kff
+  // pulse
   // mode
 }
 
@@ -63,8 +69,16 @@ thrust_msgs__msg__Thrust__are_equal(const thrust_msgs__msg__Thrust * lhs, const 
   {
     return false;
   }
-  // thrust
-  if (lhs->thrust != rhs->thrust) {
+  // thrust_meas
+  if (lhs->thrust_meas != rhs->thrust_meas) {
+    return false;
+  }
+  // thrust_comm
+  if (lhs->thrust_comm != rhs->thrust_comm) {
+    return false;
+  }
+  // thrust_comp
+  if (lhs->thrust_comp != rhs->thrust_comp) {
     return false;
   }
   // alpha
@@ -85,6 +99,10 @@ thrust_msgs__msg__Thrust__are_equal(const thrust_msgs__msg__Thrust * lhs, const 
   }
   // kff
   if (lhs->kff != rhs->kff) {
+    return false;
+  }
+  // pulse
+  if (lhs->pulse != rhs->pulse) {
     return false;
   }
   // mode
@@ -108,8 +126,12 @@ thrust_msgs__msg__Thrust__copy(
   {
     return false;
   }
-  // thrust
-  output->thrust = input->thrust;
+  // thrust_meas
+  output->thrust_meas = input->thrust_meas;
+  // thrust_comm
+  output->thrust_comm = input->thrust_comm;
+  // thrust_comp
+  output->thrust_comp = input->thrust_comp;
   // alpha
   output->alpha = input->alpha;
   // kp
@@ -120,6 +142,8 @@ thrust_msgs__msg__Thrust__copy(
   output->kd = input->kd;
   // kff
   output->kff = input->kff;
+  // pulse
+  output->pulse = input->pulse;
   // mode
   output->mode = input->mode;
   return true;

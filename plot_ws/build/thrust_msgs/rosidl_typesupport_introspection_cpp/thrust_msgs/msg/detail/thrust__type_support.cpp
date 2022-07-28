@@ -37,7 +37,7 @@ void Thrust_fini_function(void * message_memory)
   typed_message->~Thrust();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember Thrust_message_member_array[8] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember Thrust_message_member_array[11] = {
   {
     "header",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_MESSAGE,  // type
@@ -54,14 +54,44 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember Thrust_messag
     nullptr  // resize(index) function pointer
   },
   {
-    "thrust",  // name
+    "thrust_meas",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(thrust_msgs::msg::Thrust, thrust),  // bytes offset in struct
+    offsetof(thrust_msgs::msg::Thrust, thrust_meas),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
+    "thrust_comm",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(thrust_msgs::msg::Thrust, thrust_comm),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
+    "thrust_comp",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(thrust_msgs::msg::Thrust, thrust_comp),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -144,8 +174,23 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember Thrust_messag
     nullptr  // resize(index) function pointer
   },
   {
+    "pulse",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT16,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(thrust_msgs::msg::Thrust, pulse),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
     "mode",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT16,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
@@ -163,7 +208,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember Thrust_messag
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers Thrust_message_members = {
   "thrust_msgs::msg",  // message namespace
   "Thrust",  // message name
-  8,  // number of fields
+  11,  // number of fields
   sizeof(thrust_msgs::msg::Thrust),
   Thrust_message_member_array,  // message members
   Thrust_init_function,  // function to initialize message memory (memory has to be allocated)

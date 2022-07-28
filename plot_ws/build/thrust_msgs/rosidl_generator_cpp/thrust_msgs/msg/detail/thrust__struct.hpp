@@ -42,12 +42,15 @@ struct Thrust_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->thrust = 0.0;
+      this->thrust_meas = 0.0;
+      this->thrust_comm = 0.0;
+      this->thrust_comp = 0.0;
       this->alpha = 0.0;
       this->kp = 0.0;
       this->ki = 0.0;
       this->kd = 0.0;
       this->kff = 0.0;
+      this->pulse = 0;
       this->mode = 0;
     }
   }
@@ -58,12 +61,15 @@ struct Thrust_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->thrust = 0.0;
+      this->thrust_meas = 0.0;
+      this->thrust_comm = 0.0;
+      this->thrust_comp = 0.0;
       this->alpha = 0.0;
       this->kp = 0.0;
       this->ki = 0.0;
       this->kd = 0.0;
       this->kff = 0.0;
+      this->pulse = 0;
       this->mode = 0;
     }
   }
@@ -72,9 +78,15 @@ struct Thrust_
   using _header_type =
     std_msgs::msg::Header_<ContainerAllocator>;
   _header_type header;
-  using _thrust_type =
+  using _thrust_meas_type =
     double;
-  _thrust_type thrust;
+  _thrust_meas_type thrust_meas;
+  using _thrust_comm_type =
+    double;
+  _thrust_comm_type thrust_comm;
+  using _thrust_comp_type =
+    double;
+  _thrust_comp_type thrust_comp;
   using _alpha_type =
     double;
   _alpha_type alpha;
@@ -90,8 +102,11 @@ struct Thrust_
   using _kff_type =
     double;
   _kff_type kff;
+  using _pulse_type =
+    uint16_t;
+  _pulse_type pulse;
   using _mode_type =
-    uint8_t;
+    uint16_t;
   _mode_type mode;
 
   // setters for named parameter idiom
@@ -101,10 +116,22 @@ struct Thrust_
     this->header = _arg;
     return *this;
   }
-  Type & set__thrust(
+  Type & set__thrust_meas(
     const double & _arg)
   {
-    this->thrust = _arg;
+    this->thrust_meas = _arg;
+    return *this;
+  }
+  Type & set__thrust_comm(
+    const double & _arg)
+  {
+    this->thrust_comm = _arg;
+    return *this;
+  }
+  Type & set__thrust_comp(
+    const double & _arg)
+  {
+    this->thrust_comp = _arg;
     return *this;
   }
   Type & set__alpha(
@@ -137,8 +164,14 @@ struct Thrust_
     this->kff = _arg;
     return *this;
   }
+  Type & set__pulse(
+    const uint16_t & _arg)
+  {
+    this->pulse = _arg;
+    return *this;
+  }
   Type & set__mode(
-    const uint8_t & _arg)
+    const uint16_t & _arg)
   {
     this->mode = _arg;
     return *this;
@@ -189,7 +222,13 @@ struct Thrust_
     if (this->header != other.header) {
       return false;
     }
-    if (this->thrust != other.thrust) {
+    if (this->thrust_meas != other.thrust_meas) {
+      return false;
+    }
+    if (this->thrust_comm != other.thrust_comm) {
+      return false;
+    }
+    if (this->thrust_comp != other.thrust_comp) {
       return false;
     }
     if (this->alpha != other.alpha) {
@@ -205,6 +244,9 @@ struct Thrust_
       return false;
     }
     if (this->kff != other.kff) {
+      return false;
+    }
+    if (this->pulse != other.pulse) {
       return false;
     }
     if (this->mode != other.mode) {

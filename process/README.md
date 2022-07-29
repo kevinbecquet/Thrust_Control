@@ -10,11 +10,11 @@ The implementation of the thrust controller is divided in four main steps :
 ## Receiving a command
 The communication with the microcontroller is made through the serial port. Our system sends its data using a message on one line that has the following structure:  
 
-measurement,command,controller_output,proportionnal_part,Integral_part,derivative_part,feedforward_part,pulse_sent  
+*measurement,command,controller_output,proportionnal_part,Integral_part,derivative_part,feedforward_part,pulse_sent*  
 
 We can also sent configuration using the following message structure: 
 
-mode,command,vibration_filter_coef,controller_proportionnal_coef,controller_integral_coef,controller_derivative_coef,controller_feedforward_coef
+*mode,command,filter_coef,controller_proportionnal_coef,controller_integral_coef,controller_derivative_coef,controller_feedforward_coef*
 
 As this can be annoying to write and read each time, [we made a tool](../plot_ws/) allowing an easier control of the system and an easier reading of its data by using ros2 and plotjuggler.
 

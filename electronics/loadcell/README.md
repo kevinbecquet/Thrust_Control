@@ -24,10 +24,7 @@ This let us a linear tranfosmartion from the thrust force provided by the motor 
 ## Wiring
 ---
 
-The load cell needs to be excited by a voltage of 5V provided by our MCU.
-
-![alt text](images/wheatstone_wiring.jpg)
-
+The load cell needs to be excited by a voltage of 5V provided by our MCU.  
 As the use of this component in this system is to detect force from -5N to 24.5N (-0.5kgf to 2.5kgf), the output voltage it sends is about 1 mV per kgf.  
 Thus it is necessary to connect the load cell to an [amplifier](https://github.com/kevinbecquet/Thrust_Control/tree/master/electronics/amplifier) before sending the data.
 

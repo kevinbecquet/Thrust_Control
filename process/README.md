@@ -63,7 +63,7 @@ Thus, to be as fast as possible, the PWM signal that is sent to the ESC has a fr
 
 The relation between the length of the throttle sent to the motor and the thrust produced by the motor is quadratic.  
 To map these values making some measurements is necessary. 
-Then, we need to find a fitting function in the form f(PWM) = a\*PWM² + b\*PWM  
+Then, we need to find a fitting function in the form  f(PWM) = a\*PWM² + b\*PWM  
 ![F2PWM_Measurements]()
 
 Finally, it is possible to implement the reverted function PWM(f) with the a and b coeficients found previously.

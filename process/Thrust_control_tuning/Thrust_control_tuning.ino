@@ -34,7 +34,7 @@ float alpha = 0.005; // filter coef
 
 
 //Control
-#define ANTIWINDUP_THRESHUP 16 
+#define ANTIWINDUP_THRESHUP 14 
 #define ANTIWINDUP_THRESHDOWN 0
 float thrust_current = 0.0, thrust_command = 0.0, thrust_compute = 0.0, thrust_previous = 0.0;
 

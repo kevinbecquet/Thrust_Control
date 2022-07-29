@@ -7,3 +7,8 @@ http://users.ece.utexas.edu/~valvano/Datasheets/AD620.pdf
 ESC's MCU datasheet : 
 https://pdf1.alldatasheet.com/datasheet-pdf/view/466566/STMICROELECTRONICS/STM32F051C4.html
 
+Install ros2 :
+https://docs.ros.org/en/galactic/Installation.html
+
+Use plotjuggler :
+https://facontidavide.github.io/PlotJuggler/visualization_howto/index.html

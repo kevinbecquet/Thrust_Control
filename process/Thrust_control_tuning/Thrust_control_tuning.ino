@@ -38,7 +38,7 @@ float alpha = 0.005; // filter coef
 #define ANTIWINDUP_THRESHDOWN 0
 float thrust_current = 0.0, thrust_command = 0.0, thrust_compute = 0.0, thrust_previous = 0.0;
 
-float Kp = 1 , Ki = 4.0, Kd = 0.001, Kff = 0.7; //PID coef
+float Kp = 3.5 , Ki = 6.0, Kd = 0.005, Kff = 0.8; //PID coef
 float Pout = 0.0, Iout = 0.0, Dout = 0.0, Dout_prev = 0.0, FFout = 0.0, err = 0.0, err_p = 0.0;
 float derivative_approx = 0.000001;
 

@@ -2,11 +2,11 @@
 
 
 ## Summary
----
+
 The goal of this project was to implement a controller allowing to control a drone using the thrust of its motors. 
 
 ## Process
----
+
 To do so, this project is divided in [**four main steps**](https://github.com/kevinbecquet/Thrust_Control/tree/master/process):
 
 * Acquisition of the thrust produced by the motor

@@ -1,0 +1,17 @@
+[0.623s] Invoking command in '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot': PYTHONPATH=/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/python3.8/site-packages:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/python3.8/site-packages:/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages /usr/bin/python3 setup.py develop --prefix /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot --editable --build-directory /home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot/build --no-deps install_data --install-dir /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot
+[0.858s] running develop
+[0.999s] running egg_info
+[0.999s] writing thrust_plot.egg-info/PKG-INFO
+[0.999s] writing dependency_links to thrust_plot.egg-info/dependency_links.txt
+[0.999s] writing entry points to thrust_plot.egg-info/entry_points.txt
+[1.000s] writing requirements to thrust_plot.egg-info/requires.txt
+[1.000s] writing top-level names to thrust_plot.egg-info/top_level.txt
+[1.030s] reading manifest file 'thrust_plot.egg-info/SOURCES.txt'
+[1.031s] writing manifest file 'thrust_plot.egg-info/SOURCES.txt'
+[1.064s] running build_ext
+[1.064s] Creating /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/python3.8/site-packages/thrust-plot.egg-link (link to .)
+[1.065s] Installing thrust_plot script to /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/thrust_plot
+[1.065s] 
+[1.065s] Installed /home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot
+[1.065s] running install_data
+[1.095s] Invoked command in '/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot' returned '0': PYTHONPATH=/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/python3.8/site-packages:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_msgs/lib/python3.8/site-packages:/home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot:/home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot/lib/python3.8/site-packages:/opt/ros/galactic/lib/python3.8/site-packages /usr/bin/python3 setup.py develop --prefix /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot --editable --build-directory /home/kevin/Documents/Thrust_Control/plot_ws/build/thrust_plot/build --no-deps install_data --install-dir /home/kevin/Documents/Thrust_Control/plot_ws/install/thrust_plot

@@ -25,7 +25,7 @@ module thrust_msgs {
       double thrust_comp;
 
       @verbatim (language="comment", text=
-        " lowpass filter coef between 0 and 1")
+        " vibration filter coef between 0 and 1")
       double alpha;
 
       @verbatim (language="comment", text=
@@ -41,7 +41,7 @@ module thrust_msgs {
       double kd;
 
       @verbatim (language="comment", text=
-        " feedforward  coef of the controller")
+        " feedforward coef of the controller")
       double kff;
 
       @verbatim (language="comment", text=

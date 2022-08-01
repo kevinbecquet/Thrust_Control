@@ -1,7 +1,8 @@
 # Amplifier
 
 The amplifier used in this system is an analogic amplifier, AD620 module.  
-![AD620 module](images/AD620_module.jpg)*AD620 module*
+![AD620 module](images/AD620_module.jpg)  
+*AD620 module*
 ![AD620 schematic](images/AD620_schematic.jpg)  
 *AD620 module electronic schematic*
 

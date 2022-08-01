@@ -20,6 +20,8 @@ This part sums up all the components used in this system and how they are assemb
 
 ## Wiring
 
-![Block_wiring](images/thrust_control_schematic_block.jpg)
+![Block_wiring](images/thrust_control_schematic_block.jpg) 
+*Blocks schematic of the system*
 
 ![Global Wiring](images/thrust_control_schematic.jpg)
+*Electronic schematic of the thrust controller (with the modification of the A620 module)*

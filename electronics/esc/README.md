@@ -10,8 +10,6 @@ The protocol used to communicate between the microcontroller and the ESC is the 
 
 ## OneShot125
 
----
-
 This protocol allow us to send data to the ESC up to a frequency of 4kHz.
 With it, the length of the pulse corresponds directly to the speed of the motor using a 125μs pulse to stop the motor and a 250μs pulse to set it to the max value.
 

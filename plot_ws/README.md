@@ -43,16 +43,14 @@ ros2 run plotjuggler plotjuggler
 
 The messages received and published by the node are custom messages described [here](src/thrust_msgs/msg/Thrust.msg).
 
-* To send a thrust command to the system  
-enter the desired value in the **thrust_command** entry  
-enter 0 in the **mode** entry
+According to the value of the **mode** in your message, the action realised by the system will not be the same :
 
-* To tune the controller  
-enter the desired parameters in their corresponding entry
-enter 1 in the **mode** entry
+|Mode|Action|
+|-----|-------|
+|0|Send a command to the ESC|
+|1|Send a controller configuration|
+|2|Disable the controller and stop the motor|
+|3|Tare the load cell|
 
-* To tare the load cell  
-enter 3 in the **mode** entry
-
-* To disable the controller  
-enter 2 in the **mode** entry
+To send a command, use the **thrust_command** variable.  
+To send a configuration, fill each parameter with the desired values. 

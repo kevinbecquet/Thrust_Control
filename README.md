@@ -40,6 +40,8 @@ The motor is fixed to the loadcell with a screw.
 
 The amplifier module has been modified to ensure the repetability of the system. [Here](electronics/amplifier/README.md) is the detail of its modification.
 
+## Upload the program in the microcontroller
+The board used can be used with the arduino IDE by following [these steps](electronics/microcontroller/README.md)
 ## Code 
 
 To send commands to the motor, read the data from the system, and change configuration of the controller, follow [these steps](plot_ws/README.md)

@@ -18,17 +18,14 @@ To do so, this project is divided in [**four main steps**](https://github.com/ke
 
 [Here](https://github.com/kevinbecquet/Thrust_Control/tree/master/electronics) are decribed the main components of this system:
 
-[![OpenCM 9.04 MCU](electronics/microcontroller/images/OpenCM-9.04-C-Microcontroller.jpg)](https://github.com/kevinbecquet/Thrust_Control/tree/master/electronics/microcontroller)  
-*OpenCM 9.04 MCU board*
+|*OpenCM 9.04 MCU board*|*Tiger Motor F35A 3-6s ESC BLHeli_32*|
+|---|---|
+|[![OpenCM 9.04 MCU](electronics/microcontroller/images/OpenCM-9.04-C-Microcontroller.jpg)](https://github.com/kevinbecquet/Thrust_Control/tree/master/electronics/microcontroller)|[![ESC](electronics/esc/images/ESC.png)](https://github.com/kevinbecquet/Thrust_Control/tree/master/electronics/esc)|
 
-[![ESC](electronics/esc/images/ESC.png)](https://github.com/kevinbecquet/Thrust_Control/tree/master/electronics/esc)  
-*Tiger Motor F35A 3-6s ESC BLHeli_32*
+|*AD620 analog voltage amplifier module*|*Full Wheatstone bridge load cell*|
+|---|---|
+|[![AD620 Module](electronics/amplifier/images/AD620_module.jpg)](https://github.com/kevinbecquet/Thrust_Control/tree/master/electronics/amplifier)|[![Load Cell](electronics/loadcell/images/load_cell.jpg)](https://github.com/kevinbecquet/Thrust_Control/tree/master/electronics/loadcell)|
 
-[![AD620 Module](electronics/amplifier/images/AD620_module.jpg)](https://github.com/kevinbecquet/Thrust_Control/tree/master/electronics/amplifier)  
-*AD620 analog voltage amplifier module*
-
-[![Load Cell](electronics/loadcell/images/load_cell.jpg)](https://github.com/kevinbecquet/Thrust_Control/tree/master/electronics/loadcell)  
-*Full Wheatstone bridge loadcell*
 
 
 # How to use the controller

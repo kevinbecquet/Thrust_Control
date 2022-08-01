@@ -225,7 +225,7 @@ void drv_pwm_set_data_mod(uint32_t ulPin, uint32_t pwm_data )
 
   
   if (pOC->Pulse != pwm_out)
-       pTIM->Instance->CCR3=pwm_out;
+       pTIM->Instance->CCR3=pwm_out; // wright the duty cycle directly in the register that takes care of it 
       
 }
 

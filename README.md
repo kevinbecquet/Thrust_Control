@@ -32,7 +32,7 @@ To do so, this project is divided in [**four main steps**](https://github.com/ke
 
 ## Wiring
 ![Bloc wiring](electronics/images/thrust_control_schematic_block.jpg)
-*Block schematic of the system*
+*Block schematic of the system*  
 The motor is fixed to the loadcell with a screw.
 
 The amplifier module has been modified to ensure the repetability of the system. [Here](electronics/amplifier/README.md) is the detail of its modification.

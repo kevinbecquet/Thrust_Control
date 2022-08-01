@@ -3,7 +3,7 @@
 
 ## Summary
 
-The goal of this project was to implement a controller allowing to control a drone using the thrust of its motors. 
+The goal of this project is to implement a controller allowing to control a drone using the thrust produced by its motors. 
 
 ## Process
 
@@ -14,14 +14,12 @@ To do so, this project is divided in [**four main steps**](https://github.com/ke
 * Sending a signal to the ESC
 * Creation of a controller to close the loop
 
-
 # Electronics 
 
-[Here](https://github.com/kevinbecquet/Thrust_Control/tree/master/electronics) are the main components of this system:
+[Here](https://github.com/kevinbecquet/Thrust_Control/tree/master/electronics) are decribed the main components of this system:
 
 [![OpenCM 9.04 MCU](electronics/microcontroller/images/OpenCM-9.04-C-Microcontroller.jpg)](https://github.com/kevinbecquet/Thrust_Control/tree/master/electronics/microcontroller)  
 *OpenCM 9.04 MCU board*
-
 
 [![ESC](electronics/esc/images/ESC.png)](https://github.com/kevinbecquet/Thrust_Control/tree/master/electronics/esc)  
 *Tiger Motor F35A 3-6s ESC BLHeli_32*
@@ -29,10 +27,19 @@ To do so, this project is divided in [**four main steps**](https://github.com/ke
 [![AD620 Module](electronics/amplifier/images/AD620_module.jpg)](https://github.com/kevinbecquet/Thrust_Control/tree/master/electronics/amplifier)  
 *AD620 analog voltage amplifier module*
 
-[![Load Cell]()](https://github.com/kevinbecquet/Thrust_Control/tree/master/electronics/loadcell)  
+[![Load Cell](electronics/loadcell/images/load_cell.jpg)](https://github.com/kevinbecquet/Thrust_Control/tree/master/electronics/loadcell)  
 *Full Wheatstone bridge loadcell*
 
 
+# How to use the controller
 
+## Wiring
+![Bloc wiring](electronics/images/thrust_control_schematic_block.jpg)
 
+The motor is fixed to the loadcell with a screw.
 
+The amplifier module has been modified to ensure the repetability of the system. [Here](electronics/amplifier/README.md) is the detail of its modification.
+
+## Code 
+
+To send commands to the motor, read the data from the system, and change configuration of the controller, follow [these steps](plot_ws/README.md)

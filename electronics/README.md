@@ -20,3 +20,6 @@ This part sums up all the components used in this system and how they are assemb
 
 ## Wiring
 
+![Block_wiring](images/thrust_control_schematic_block.jpg)
+
+![Global Wiring](images/thrust_control_schematic.jpg)

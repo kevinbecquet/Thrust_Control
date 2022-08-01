@@ -47,11 +47,11 @@ This potentiometer provides to the system a division of the input voltage. The r
 ### Gain's potentiometer
 
 This one doesn't create a voltage divider but still allow the variation of a resistor :  
-R<sub>G</sub>=(G-1)/(49.4∙10<sup>3</sup>) = 27Ω
+**R<sub>G</sub>=(G-1)/(49.4∙10<sup>3</sup>) = 27Ω**
 
 ## Wiring
 
 First replace the potentiometers by the resistors determined earlier. Then,  add the components of the low pass filter on the output pin.
 Finally, connect the new output to the OpenCM board
 
-![new schema](images/new_schema.jpg)
+![new schema](images/AD620_module_modified.jpg)

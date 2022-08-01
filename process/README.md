@@ -16,7 +16,7 @@ We can also sent configuration using the following message structure:
 
 *mode,command,filter_coef,controller_proportionnal_coef,controller_integral_coef,controller_derivative_coef,controller_feedforward_coef*
 
-As this can be annoying to write and read each time, [we made a tool](../plot_ws/) allowing an easier control of the system and an easier reading of its data by using ros2 and plotjuggler.
+As this can be annoying to write and read each time, [a tool has been implemented](../plot_ws/) allowing an easier control of the system and an easier reading of its data by using ros2 and plotjuggler.
 
 
 ## Receiving the force values sent by the loadcell

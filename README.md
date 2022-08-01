@@ -9,12 +9,12 @@ The goal of this project is to implement a controller allowing to control a dron
 
 To do so, this project is divided in [**four main steps**](https://github.com/kevinbecquet/Thrust_Control/tree/master/process):
 
-* Acquisition of the thrust produced by the motor
 * Acquisition of the command sent to the ESC
+* Acquisition of the thrust produced by the motor
 * Sending a signal to the ESC
 * Creation of a controller to close the loop
 
-# Electronics 
+# Electronics
 
 [Here](https://github.com/kevinbecquet/Thrust_Control/tree/master/electronics) are decribed the main components of this system:
 

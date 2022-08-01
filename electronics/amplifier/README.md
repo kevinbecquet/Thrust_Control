@@ -38,7 +38,7 @@ Then, as the potentiometers are not that stable (differences of values have been
 
 ### Offset's potentiometer
 
-This potentiometer provides to the system a division of the input voltage. The resistors usable to replace it are found by resolving this system and taking the closest resistors:
+This potentiometer provides to the system a division of the input voltage. The resistors usable to replace it are found by resolving this system and taking the closest resistors:  
 ![offset's resistor](images/Resistor_offset.jpg)
 
 ### Gain's potentiometer
